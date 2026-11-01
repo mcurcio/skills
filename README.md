@@ -12,7 +12,7 @@ every other agent or person who reads the files, works to the same rules, kept i
 | Plugin | What it holds | Who enables it |
 |---|---|---|
 | `rules` | `global`: the engineering rules (design philosophy, the owner's language, delivery, always-on habits), injected into every session by a SessionStart hook. `owner-design`, `owner-delivery`, `owner-conversation`: the reasons and worked examples behind them. `pages`: how every page or report for the owner is presented. Requires `impeccable` | every project that opts in |
-| `workflow` | `orchestrator`: the main session's policy (routing, workflows, owner gates, review), injected by a SessionStart hook. The agents `code-architect`, `system-architect`, `requirements`, `design-reviewer`, `implementer`, `verifier`, `deployer`, `general-purpose`. The skills `design-doc`, `implementation-workflow`, `antipattern-review`. Needs `rules` | the owner, at user scope |
+| `workflow` | `orchestrator`: the main session's policy (routing, workflows, owner gates, review), injected by a SessionStart hook. The agents `code-architect`, `system-architect`, `requirements`, `design-reviewer`, `implementer`, `verifier`, `deployer`, `general-purpose`. The skills `design-doc`, `implementation-workflow`, `antipattern-review`. Needs `rules` | every project, with `rules` |
 | `releases` | `semantic-release`: releases cut automatically on merge, notes in `CHANGELOG.md`, the version in the git tag only | projects that release |
 | `toolkit` | `grammar-soundness` (proving a grammar unambiguous, checking parsers against it) and `chrome-ui-testing` (test-driving a web UI in Chrome) | anyone who wants them |
 
@@ -43,14 +43,17 @@ Commit this as the project's `.claude/settings.json` (or merge it into the one t
   },
   "enabledPlugins": {
     "rules@mcurcio-skills": true,
+    "workflow@mcurcio-skills": true,
     "releases@mcurcio-skills": true
   }
 }
 ```
 
-Leave out `releases` if the project does not release. Keep the `impeccable` entry: `rules` requires
-the `impeccable` plugin from that marketplace, and without the marketplace `rules` fails to load
-(Claude Code installs the plugin itself once the marketplace is known). A contributor gets the plugins once they
+Leave out `releases` if the project does not release. `workflow` gives contributors the maintainer's
+main-session process and agents too (the maintainer's choice, 2026-11-01). Keep the `impeccable`
+entry: `rules` requires the `impeccable` plugin from that marketplace, and without the marketplace
+`rules` fails to load (Claude Code installs the plugin itself once the marketplace is known). A
+contributor gets the plugins once they
 trust the project folder in Claude Code; the first session may say "Plugins changed. Run
 /reload-plugins". One person can turn a plugin off for themselves with
 `"rules@mcurcio-skills": false` in `.claude/settings.local.json`.
