@@ -1,0 +1,7 @@
+{
+  "name": "rules",
+  "description": "The global engineering rules, injected into every session, and the owner-* skills that give their reasons.",
+  "author": { "name": "Matt Curcio", "url": "https://github.com/mcurcio" },
+  "homepage": "https://github.com/mcurcio/skills",
+  "repository": "https://github.com/mcurcio/skills"
+}

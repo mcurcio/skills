@@ -1,0 +1,31 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "mcurcio-skills",
+  "description": "Matt Curcio's shared engineering rules, skills and agents for Claude Code.",
+  "owner": {
+    "name": "Matt Curcio",
+    "url": "https://github.com/mcurcio"
+  },
+  "plugins": [
+    {
+      "name": "rules",
+      "source": "./plugins/rules",
+      "category": "development"
+    },
+    {
+      "name": "workflow",
+      "source": "./plugins/workflow",
+      "category": "development"
+    },
+    {
+      "name": "releases",
+      "source": "./plugins/releases",
+      "category": "development"
+    },
+    {
+      "name": "toolkit",
+      "source": "./plugins/toolkit",
+      "category": "development"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+# On every pull request and every push to main:
+# - check: scripts/check.sh (Claude Code's plugin validator on the marketplace and each plugin,
+#   skill and agent frontmatter, the 9,500-character limit on each file a hook injects, and a
+#   privacy grep).
+# Then, on a push to main only, once check passes:
+# - release: semantic-release (.releaserc.json, the root package.json) reads the Conventional
+#   Commits since the last v* tag and, when one calls for a bump, appends the release notes to
+#   CHANGELOG.md, commits it to main ("chore(release): <version> [skip ci]"), tags that commit
+#   v<version> and makes its GitHub Release. No file holds the version; consumers follow main.
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: scripts/check.sh
+        env:
+          CLAUDE: node_modules/.bin/claude
+
+  release:
+    needs: [check]
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    concurrency:
+      group: release
+      cancel-in-progress: false
+    # contents: write: the CHANGELOG.md commit and the tag are pushed to main, and
+    # semantic-release checks push access first. Comments, labels and failure issues are off in
+    # .releaserc.json, so no other scope. A push made with GITHUB_TOKEN starts no workflow, and
+    # the commit's "[skip ci]" is a second guard.
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - name: semantic-release
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: npx semantic-release

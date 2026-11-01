@@ -1,0 +1,8 @@
+{
+  "name": "workflow",
+  "description": "The orchestrator policy for the main session, its agents and the design-doc, implementation-workflow and antipattern-review skills.",
+  "author": { "name": "Matt Curcio", "url": "https://github.com/mcurcio" },
+  "homepage": "https://github.com/mcurcio/skills",
+  "repository": "https://github.com/mcurcio/skills",
+  "dependencies": ["rules"]
+}
