@@ -1,7 +1,13 @@
 {
   "name": "rules",
-  "description": "The global engineering rules, injected into every session, and the owner-* skills that give their reasons.",
-  "author": { "name": "Matt Curcio", "url": "https://github.com/mcurcio" },
+  "description": "The global engineering rules, injected into every session, the owner-* skills that give their reasons, and how pages for the owner are presented.",
+  "author": {
+    "name": "Matt Curcio",
+    "url": "https://github.com/mcurcio"
+  },
   "homepage": "https://github.com/mcurcio/skills",
-  "repository": "https://github.com/mcurcio/skills"
+  "repository": "https://github.com/mcurcio/skills",
+  "dependencies": [
+    "impeccable@impeccable"
+  ]
 }

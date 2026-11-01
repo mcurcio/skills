@@ -6,8 +6,8 @@ description: How to talk with the owner and why. Reasons and craft behind the ow
 # Talking with the owner
 
 The rules are in `rules:global` §The owner's language, and for the main session the
-`workflow:orchestrator` policy §Owner gates and §Reporting. The gate document's shape is the
-`workflow:design-doc` skill; the review report's shape is `workflow:antipattern-review` §4. This file gives the
+`workflow:orchestrator` policy §Owner gates and §Reporting. How any page for him is presented is
+`rules:pages`; the gate document's shape is the `workflow:design-doc` skill; the review report's shape is `workflow:antipattern-review` §4. This file gives the
 reasons and the craft.
 
 ## Who he is in the conversation
