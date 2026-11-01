@@ -1,0 +1,7 @@
+{
+  "name": "releases",
+  "description": "How a repo releases: semantic-release on merge, CHANGELOG.md, the version in the tag only.",
+  "author": { "name": "Matt Curcio", "url": "https://github.com/mcurcio" },
+  "homepage": "https://github.com/mcurcio/skills",
+  "repository": "https://github.com/mcurcio/skills"
+}

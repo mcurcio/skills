@@ -1,0 +1,7 @@
+{
+  "name": "toolkit",
+  "description": "Stand-alone skills: grammar soundness checks and test-driving a web UI in Chrome.",
+  "author": { "name": "Matt Curcio", "url": "https://github.com/mcurcio" },
+  "homepage": "https://github.com/mcurcio/skills",
+  "repository": "https://github.com/mcurcio/skills"
+}

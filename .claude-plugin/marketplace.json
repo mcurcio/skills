@@ -1,0 +1,32 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "mcurcio-skills",
+  "description": "Matt Curcio's shared engineering rules, skills and agents for Claude Code.",
+  "owner": { "name": "Matt Curcio", "url": "https://github.com/mcurcio" },
+  "plugins": [
+    {
+      "name": "rules",
+      "source": "./plugins/rules",
+      "description": "The global engineering rules, injected into every session, and the owner-* skills that give their reasons.",
+      "category": "development"
+    },
+    {
+      "name": "workflow",
+      "source": "./plugins/workflow",
+      "description": "The orchestrator policy for the main session, its agents (architects, reviewers, implementer, verifier, deployer) and the design-doc, implementation-workflow and antipattern-review skills.",
+      "category": "development"
+    },
+    {
+      "name": "releases",
+      "source": "./plugins/releases",
+      "description": "How a repo releases: semantic-release on merge, CHANGELOG.md, the version in the tag only.",
+      "category": "development"
+    },
+    {
+      "name": "toolkit",
+      "source": "./plugins/toolkit",
+      "description": "Stand-alone skills: grammar soundness checks and test-driving a web UI in Chrome.",
+      "category": "development"
+    }
+  ]
+}

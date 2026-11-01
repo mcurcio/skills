@@ -1,0 +1,12 @@
+{
+  "description": "Injects the orchestrator skill's text into every main session (startup, resume, clear and compact).",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          { "type": "command", "command": "sh \"${CLAUDE_PLUGIN_ROOT}/hooks/inject.sh\" orchestrator" }
+        ]
+      }
+    ]
+  }
+}
