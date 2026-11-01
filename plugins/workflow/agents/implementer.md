@@ -5,7 +5,7 @@ description: Executes a defined implementation task — code edits, refactors,
   PROACTIVELY for behavioral changes to production code paths, infra
   definitions, or CI config. Give it a concrete spec (goal, files, approach,
   acceptance criteria), not an open question.
-tools: Read, Grep, Glob, Edit, Write, Bash, WebFetch, WebSearch
+tools: Read, Grep, Glob, Edit, Write, Bash, WebFetch, WebSearch, Skill
 model: inherit
 color: blue
 skills:

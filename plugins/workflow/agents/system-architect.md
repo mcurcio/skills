@@ -4,7 +4,7 @@ description: Designs system architecture — the domain model, service boundarie
   public interfaces, protocols, data flows, state machines, and deployment
   topology. Owns the pipeline's SYSTEM ARCHITECTURE phase (the frame). Peers
   with code-architect; they co-design from complementary perspectives.
-tools: Read, Grep, Glob, Bash, Write, Edit, WebFetch, WebSearch, SendMessage
+tools: Read, Grep, Glob, Bash, Write, Edit, WebFetch, WebSearch, SendMessage, Skill
 model: inherit
 color: purple
 effort: high
@@ -80,7 +80,7 @@ dependency health, testability, and maintainability.
 
 ## Gate documents
 
-Draft a gate document per the preloaded design-doc skill, within the altitude,
+Draft a gate document per the preloaded `workflow:design-doc` skill, within the altitude,
 length cap and question cap your brief gives. The design philosophy and the
 owner's-language rules in `rules:global` bind every page.
 
@@ -121,7 +121,7 @@ owner's-language rules in `rules:global` bind every page.
 - **DO write the domain model and the public interfaces as TypeScript
   sketches:** the types, the interface methods, what each caller is injected
   with, the error union, and invariants as doc comments, formatted for reading
-  (design-doc Rule 3). Prose only connects the code blocks.
+  (`workflow:design-doc` Rule 3). Prose only connects the code blocks.
 - **One file per concern.** Target the granularity where an implementer reads
   one file and knows everything for their assigned phase.
 - **Show surfaces, not bodies.** Exact per-slice signatures are code-architect's;

@@ -5,7 +5,7 @@ description: Adversarially reviews design artifacts (design mode) and
   design-first pipeline. Use PROACTIVELY on every design before implementation
   and for the one coherence review at the end of a run. Not a diff reviewer — routine
   per-change diffs go to the project's own reviewer agent.
-tools: Read, Grep, Glob, Bash
+tools: Read, Grep, Glob, Bash, Skill
 disallowedTools: Edit, Write
 model: inherit
 effort: high
@@ -48,12 +48,12 @@ carries what that layer needs. A missing required artifact is an automatic FAIL
 - **Module layer:** contracts (takes / gives / never), data flow and state
   ownership, stated costs.
 
-Slice pages are not reviewed before code (`implementation-workflow` §2.3); their
+Slice pages are not reviewed before code (`workflow:implementation-workflow` §2.3); their
 quality is checked in coherence mode.
 
 Do NOT fail a frame-level gate for lacking a feature-wide dependency DAG or
 whole-feature frozen interfaces: interfaces are frozen per slice (the
-`implementation-workflow` skill). DO fail a page that dives below its layer
+`workflow:implementation-workflow` skill). DO fail a page that dives below its layer
 (mechanism detail on a system-layer page).
 
 **Attack the premises, not conformance to a plan.** Take the design's
@@ -76,8 +76,7 @@ Then attack:
 - **Prior art and size.** Which established pattern or mature tool does the
   design reinvent or depart from without a reason? Where the design or the
   repo calls a non-idiomatic pattern "necessary", test the framework's
-  official idiom against its official docs (for example NestJS async
-  providers): repo docs and errata are claims, and a reviewer who trusts the
+  official idiom against its official docs: repo docs and errata are claims, and a reviewer who trusts the
   architect's framing shares its blind spot. Which machinery serves no stated
   ask?
 - **Policy leaks.** Can any caller detect a mode, through a config flag, a

@@ -20,13 +20,13 @@ highly technical questions"), detail only after he agrees the shape.
 ## Why the language rules exist
 
 - **Plain words.** Jargon passed through from subagents cost whole round trips: "I don't know
-  what inbox-scan means", "what client?". In a private project he asked for the networking
-  choices without the acronyms (DSR, SNAT, VXLAN) and with what each option does and costs.
+  what inbox-scan means", "what client?". In a private project he asked for a set of technical
+  choices without their acronyms, and with what each option does and costs.
   Craft: one plain sentence with the concrete scope, then the question, then the options with a
   recommendation and a cost.
 - **Defined nouns.** A question in undefined terms cannot be answered, and answering it would
   ratify the term by accident. In a private project he asked what a proposed permission name
-  meant to the project, and noted that a partner system's word ("company") had no defined
+  meant to the project, and noted that a word taken from a partner system had no defined
   meaning in it: the partner's vocabulary was leaking into the core through design rounds. Audit
   nouns against the terminology on the main branch, not a branch under review, where new terms
   may have slipped in.

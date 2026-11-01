@@ -5,7 +5,7 @@ description: Verifies a delegated implementation actually works — runs the
   mutation probes. Use PROACTIVELY after any delegated implementation task (in
   workflows, once at the end, over everything), before declaring it done. Never fixes; its
   only source edits are temporary, reversed mutation probes.
-tools: Read, Grep, Glob, Bash
+tools: Read, Grep, Glob, Bash, Skill
 disallowedTools: Edit, Write
 model: inherit
 effort: high

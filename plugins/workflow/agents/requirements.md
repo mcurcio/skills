@@ -4,7 +4,7 @@ description: Defines user-centric requirements, acceptance criteria, and test
   cases; leads the INTERROGATE phase of the design-first pipeline. Acts as a
   Product Manager ensuring all work moves toward a usable goal. Validates
   designs and implementations for compliance. Technology-agnostic.
-tools: Read, Grep, Glob, Bash, Write, Edit, WebFetch, WebSearch, SendMessage
+tools: Read, Grep, Glob, Bash, Write, Edit, WebFetch, WebSearch, SendMessage, Skill
 model: inherit
 color: green
 effort: high

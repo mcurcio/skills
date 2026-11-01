@@ -11,15 +11,15 @@ craft; where it seems to differ from a rule, the rule wins.
 
 ## Evidence, not status
 
-- **Capability over status.** In a private project a replicated database reported every replica
-  ready for an unknown time while its failover path was dead; only a switchover drill and a real
-  restore proved anything. Bind assertions to the tool's own vocabulary (Pulumi ops `same` or
-  `update`), not to a log that went quiet. In another, the web app broke for every signed-in
+- **Capability over status.** In a private project a service reported itself healthy for an
+  unknown time while its fallback path was dead; only a drill of that path proved anything. Bind
+  assertions to the tool's own vocabulary (the operations its plan reports), not to a log that
+  went quiet. In another, the web app broke for every signed-in
   user while every UI test passed, because the browser suite stubbed out the check that failed;
   controller specs passed while the production binary returned 400 to every POST, because the
   specs built a different HTTP pipeline. In a third, `swift test` ran zero assertions and still
   exited 0.
-- **Mutation probes** prove a test can fail. A cross-package probe in a private monorepo stayed
+- **Mutation probes** prove a test can fail. A cross-package probe in a private project stayed
   green because the test ran the stale built `dist/` while source maps pointed at `src/`.
 - **Pipes.** An implementer reported verify green; the e2e stage had exited 1 with failures, and
   the green was `tee`'s exit code.
@@ -37,8 +37,8 @@ craft; where it seems to differ from a rule, the rule wins.
 
 - photo-wall, after a PR with 6.1k test lines for 3.8k product lines: "I prefer integration tests
   that exercise functional requirements rather than unit tests which exercise internal code".
-  A private infrastructure repo keeps unit tests for library logic and functional health checks
-  for workloads. The shared rule is behaviour through the real artifact; the unit-to-integration
+  Another private project keeps unit tests for library logic and functional checks for what it
+  runs. The shared rule is behaviour through the real artifact; the unit-to-integration
   balance is the repo's.
 - "All tests should be fast by design": a slow tier is a concession, not a default. He rejected a
   10-minute outage step in a CI leg.
@@ -49,16 +49,17 @@ craft; where it seems to differ from a rule, the rule wins.
   chain ("there is no reason to do that locally"). In photo-wall one workstream took 6 hours
   ("an insane amount of time"), a third of it verifiers re-running locally, at 27 minutes a pass,
   tiers CI ran in parallel in about 12.
-- **By PR, merged by him.** "Always PR; never a direct deploy" (a private infrastructure repo):
-  the PR keeps a review and audit gate and avoids ad-hoc interactive deploys. In one repo a bot
-  account opens PRs and the owner's own account is not signed in, so it cannot be used by mistake.
+- **By PR, merged by him.** "Always PR; never a direct deploy" (a private project):
+  the PR keeps a review and audit gate and avoids ad-hoc interactive deploys. PRs can come from a
+  separate bot account, so the owner's own account cannot be used by mistake.
 - **Watched PRs.** Asked whether to watch a PR, he answered "Always": red CI and unread comments
   had sat unnoticed between batches.
 - **Releases.** He refused to hand-tag a release candidate ("The GHA workflow is supposed to
   handle versioning"). A squash-merge under a non-conventional title released nothing, because
   the commit type drives the version bump. In ear he rejected release-please's standing release
   PR (2026-11-01: "I don't like release-please. I prefer semantic release and auto releases
-  after PRs are merged"): merging the work is the release, with no second PR to merge.
+  after PRs are merged. Other repos already follow that precedent"): merging the work is the
+  release, with no second PR to merge.
   How: the `releases:semantic-release` skill.
 - **The implementer lands its own slice.** A separate commit agent costs about 60k tokens of
   context for one `git commit`; one run spent 19% of its tokens on nine of them.
@@ -98,7 +99,7 @@ craft; where it seems to differ from a rule, the rule wins.
 ## Deploying
 
 A preview is not an apply, and the deployer reports rather than decides, because a wrong
-Pulumi op deletes live resources: in a private infrastructure repo a mistimed stack merge can
-delete what a state move was meant to keep. The heads-up before an interactive-auth command
+operation deletes live resources: a change applied in the wrong order can delete what it was
+meant to keep. The heads-up before an interactive-auth command
 exists so the owner is ready to answer its prompt (a password-manager or biometric unlock,
 sudo), which a background agent would leave hanging.

@@ -30,7 +30,7 @@ him, this file wins (undated rules here: 2026-10-08). Report any contradiction y
   definition of it (one state machine, one contract), never a flow per component.
 - **Trace every invariant to the owner before encoding it.** A rule in a requirements doc with
   no quote from him is an assumption: verify it before a design rests on it or code enforces it
-  (2026-10-23: ~700 lines and 3-4 tables guarded rules he never stated). A pick among offered
+  (owner, 2026-10-23; the case is in `rules:owner-design`). A pick among offered
   options is a revisable choice, never a requirement.
 - **DRY and SOLID.** The owner: "I value DRY and SOLID much more than YAGNI" (a private repo,
   2026-07-15); asked whether that holds outside it: "DRY and SOLID are always important"
@@ -50,9 +50,9 @@ him, this file wins (undated rules here: 2026-10-08). Report any contradiction y
   source; correctness and health hold with the cache empty.
 - **Audit fields are part of every record.** A tenet of good database design, not a feature to
   be asked for: every persisted record carries when it was created and by whom, and when it was
-  last changed and by whom, as its own columns written by the persistence layer (next rule). These facts are never
+  last changed and by whom, as its own columns written by the persistence layer (next rule), never
   derived from other data (permissions, history, logs). An append-only event table meets this
-  through its rows (each row is one event with its actor and time). Owner, 2026-10-24.
+  through its rows (one event, its actor and time). Owner, 2026-10-24.
 - **Persistence lives behind repositories** (domain-driven design's layered architecture and
   Repository pattern). The domain layer never touches the database: it asks a repository,
   one per aggregate, through an interface. Every database operation sits in the
@@ -61,7 +61,7 @@ him, this file wins (undated rules here: 2026-10-08). Report any contradiction y
   applied once in that layer by an established library or the ORM's own feature (global
   query filters, scopes, soft-delete plugins), never written by hand in each query. So a read
   cannot skip them by mistake. Soft delete is a valid technique where it fits; this rule is
-  what makes it safe. Owner, 2026-10-24 (his words for both: `rules:owner-design`).
+  what makes it safe. Owner, 2026-10-24 (quoted in `rules:owner-design`).
 - **State costs, don't sell:** say what a design gives up, leaves uncovered and defers.
 - **The spec is the source of truth.** Code that disagrees has a bug, unless the work proved the
   spec wrong; report that as a finding, never diverge silently.
@@ -93,17 +93,16 @@ him, this file wins (undated rules here: 2026-10-08). Report any contradiction y
 - Commits follow Conventional Commits. Releases come only from the repo's automated flow after
   merge: never hand-tag, hand-edit a version or add a pre-merge release path. That flow is
   semantic-release, releasing automatically when a PR merges, never release-please (owner,
-  2026-11-01; his words: `rules:owner-delivery`); Lerna only where a monorepo versions packages independently.
+  2026-11-01, quoted in `rules:owner-delivery`); Lerna only where a monorepo versions packages independently.
 - **CI is the full gate** where the repo's CI runs its full suite on every PR (read its CI
   config): locally run the changed packages' tests, typecheck and lint, and let CI judge the
   pushed branch; run the full gate locally only when CI cannot (spending limit, quota). Mutation
   probes and tiers the repo says CI skips stay local; without such CI, verifiers run every gate
-  the repo lists. Owner, 2026-10-08 (his words: `rules:owner-delivery`).
+  the repo lists. Owner, 2026-10-08 (quoted in `rules:owner-delivery`).
 - Tests prove behaviour through the real artifact, not its structure; verification checks a
   capability, not a status that can stay green while the capability is dead. Keep tests and each
   CI leg fast: a slow tier is a cost to argue for, not a default.
-- Run a repo's tools under its pinned runtime (`.nvmrc`, the lockfile); a non-interactive shell's
-  default Node is often the wrong one.
+- Run a repo's tools under its pinned runtime (`.nvmrc`, the lockfile), never the shell's default.
 
 ## Always
 - Report where the spec, plan or brief is wrong; that is a finding.
@@ -122,6 +121,7 @@ him, this file wins (undated rules here: 2026-10-08). Report any contradiction y
 - Undo your own edit by reversing it; never `git checkout`, `restore`, `stash` or `reset` a file
   that holds uncommitted work.
 - List every check you skipped or could not run as NOT RUN; never claim a result you did not see.
-- Pin models explicitly for any agent or workflow step you define; never rely on a moving alias.
+- Pin the model of any agent or workflow step you define; `inherit` only when the parent's model
+  is pinned; never a moving alias.
 - The chat message is the answer: never hide a fact, finding, result or question in a side panel
-  or a button the message lacks.
+  or a button the message lacks. Close every loop: a "checking X" ends with what X turned out to be.

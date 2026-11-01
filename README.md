@@ -5,8 +5,7 @@ published as a [Claude Code plugin marketplace](https://code.claude.com/docs/en/
 named `mcurcio-skills`. His projects opt in to it, so every contributor's Claude Code session, and
 every other agent or person who reads the files, works to the same rules, kept in one place.
 
-In these files "the owner" is the maintainer of the project you are working in. In a contributor's
-session, "ask the owner" means raise it with the maintainer on the PR or issue.
+"The owner" in these files is defined once, at the top of `plugins/rules/skills/global/SKILL.md`.
 
 ## The plugins
 
@@ -24,8 +23,8 @@ task.
 How the rules reach a session: a plugin cannot ship a `CLAUDE.md` as context, so each of `rules`
 and `workflow` has a SessionStart hook (`hooks/inject.sh`) that prints its skill's text at the
 start of every session and again after compaction. Hook output does not reach subagents, so this
-repo's agents preload `rules:global` through their `skills:` frontmatter. Each injected file stays
-under 9,500 characters, because hook output over 10,000 arrives cut to a preview; CI checks it.
+repo's agents preload `rules:global` through their `skills:` frontmatter. CI keeps each injected
+file under a size limit (`scripts/check.sh` says why).
 
 ## Opting a project in
 
@@ -66,6 +65,10 @@ To use the plugins in every project on your machine instead:
 /plugin install workflow@mcurcio-skills
 ```
 
+A marketplace added this way does not update on its own: turn on auto-update for `mcurcio-skills`
+in `/plugin` > Marketplaces, or put the `extraKnownMarketplaces` entry above (with `"autoUpdate":
+true`) in your user settings, `~/.claude/settings.json`.
+
 ### Following releases
 
 Every plugin here follows `main`: no plugin file carries a version, so each merge reaches every
@@ -86,8 +89,9 @@ These skills are good and are not republished here. Install them from their auth
 
 ## Contributing
 
-- Change a rule in exactly one place. A rule lives in `rules:global` or `workflow:orchestrator`;
-  the reasons for it live in an `owner-*` skill; a rule for one project stays in that project.
+- Change a rule in exactly one place. A rule lives in `rules:global` or `workflow:orchestrator`,
+  or, for one role, in that agent's body; the reasons for it live in an `owner-*` skill; a rule
+  for one project stays in that project.
 - Name a skill or agent in another plugin by its scoped name (`rules:owner-delivery`), and a
   file in the same plugin by `${CLAUDE_PLUGIN_ROOT}/...`, never by a path on your machine.
 - Nothing private: no local paths, email addresses, host names, secrets or details of private

@@ -116,7 +116,7 @@ Rules that make the hunters good (encoded in the templates — keep them):
 - **One axis per agent.** Overlap is fine at the edges; a single agent chasing five
   smells returns mush.
 - **Give it the seed, the hunt list, the METHOD, and the RETURN contract.** The METHOD
-  names the grep patterns / CodeGraph queries; the RETURN contract demands conclusions
+  names the grep patterns (and CodeGraph queries where `.codegraph/` exists); the RETURN contract demands conclusions
   not dumps, `file:line` for everything, short quotes, no diff pastes.
 - **Forbid lazy dismissal.** Tell agents on areas a prior pass waved off ("looks fine"):
   assume more exists, trace the risky paths, and don't accept "it logs the error" as a

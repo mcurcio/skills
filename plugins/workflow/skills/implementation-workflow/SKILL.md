@@ -14,7 +14,7 @@ is the full gate**.
 
 Why this exists: `reference/2026-09-02-unattended-run-retrospective.md` — 14 hours, ~5.5M
 tokens cited (~7M estimated), 2 of 64 beads landed. The beads were cut along interface artifacts across
-12 packages, so no vocabulary bead could ever be green alone; every bead paid a
+many packages, so no vocabulary bead could ever be green alone; every bead paid a
 30–60 minute fixed cost for 5 minutes of change; docs sat inside the green gate;
 two verified beads were reverted over paperwork. The design gate, the adversarial
 design review and the tracer-first ordering worked and are kept.
@@ -27,7 +27,7 @@ slice cut, and no preflight that re-runs a baseline a setup step already ran.
 
 ## 1. What stays from the design phase (unchanged, binding)
 
-- ONE design document per owner gate, written per the `design-doc` skill, reviewed
+- ONE design document per owner gate, written per the `workflow:design-doc` skill, reviewed
   by the owner on a PR. Merge is acceptance.
 - Adversarial, multi-lens review of the **design** (security, correctness,
   regression, completeness, plus a domain expert) before any code. Reviewers attack the
@@ -35,7 +35,7 @@ slice cut, and no preflight that re-runs a baseline a setup step already ran.
   not handed the bead list. This is where P0s are cheap.
 - The **tracer bullet** defined in the design: the thinnest end-to-end path through
   the riskiest seam (usually authz or data loss). Its named mutation probes are written on
-  the tracer slice's frozen page (§2), not in the design briefing, which `design-doc` keeps
+  the tracer slice's frozen page (§2), not in the design briefing, which `workflow:design-doc` keeps
   free of probes.
 
 ## 2. What replaces the code-architecture phase

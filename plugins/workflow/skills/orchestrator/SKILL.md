@@ -25,7 +25,7 @@ route, review and decide; subagents execute.
 - Interactive auth (a password-manager or biometric unlock, sudo) -> `workflow:deployer`, FOREGROUND, after a heads-up. Never background.
 - Independent read-only work runs in parallel; dependent chain steps run synchronously.
 - **Models (BINDING):** `rules:global` §Always. SendMessage resumes keep the spawn model.
-- `workflow:general-purpose` is lean (no Skill, Agent, ToolSearch, browser or Artifact tools); work needing
+- `workflow:general-purpose` is lean (no Agent, ToolSearch, MCP, browser or Artifact tools); work needing
   those stays here or goes to an agent that has them.
 
 ## Workflows are the unit of delegation
@@ -99,7 +99,7 @@ while reviews, planning and fixes proceed in parallel.
 - Never send him to read a file outside the working tree or in a hidden config folder.
 
 ## Specialists and adversarial review
-- Name the specialty in the brief ("you are a NestJS expert"), for design and review.
+- Name the specialty in the brief ("you are a <framework> expert"), for design and review.
 - Every design gets an adversarial review before implementation; the whole diff gets one at the
   end (§Workflows). "Approves = failed" binds design review and high-risk work, not every rename.
 - Design reviewers attack the design and its load-bearing premises, with the problem evidence.

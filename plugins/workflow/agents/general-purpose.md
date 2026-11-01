@@ -5,7 +5,7 @@ description: General-purpose agent for researching complex questions, searching
   (research, multi-step operations, code modifications). When you are searching
   for a keyword or file and are not confident that you will find the right match
   in the first few tries, use this agent to perform the search for you.
-tools: Read, Grep, Glob, Bash, Edit, Write, WebFetch, WebSearch, mcp__codegraph__codegraph_explore
+tools: Read, Grep, Glob, Bash, Edit, Write, WebFetch, WebSearch, Skill
 skills:
   - rules:global
 ---
@@ -27,6 +27,5 @@ nothing beyond it.
   interactive auth unless the brief says so. The issue tracker is read-only
   unless the brief assigns you a bead's status; then update only that bead,
   and never create or claim one.
-- You have no Skill tool: when a skill applies, read its SKILL.md (this
-  plugin's are under `${CLAUDE_PLUGIN_ROOT}/skills/<name>/`; the repo's
-  CLAUDE.md lists its own).
+- When a skill's description matches the task, load it with the Skill tool
+  before you start.

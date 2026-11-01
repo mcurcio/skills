@@ -5,13 +5,12 @@ description: Load before setting up, changing, migrating or debugging how a repo
 
 # Releases: semantic-release on merge
 
-Owner, 2026-11-01 (ear session): "I don't like release-please. I prefer semantic release and
-auto releases after PRs are merged. Other repos already follow that precedent". The global rule
-is in `rules:global` §Delivery; this page is how to build and run it.
+The rule (semantic-release on merge, never release-please, and when Lerna is allowed) is in
+`rules:global` §Delivery, and the owner's words for it
+(2026-11-01) are in `rules:owner-delivery`; this page is how to build and run it.
 
 Precedents: **knobly** (`.github/workflows/ci.yml` job `release`, `.releaserc.json`, root
-`package.json`, `.github/release-build.sh`) is the reference single-version setup. A monorepo that versions many packages independently
-uses Lerna for that case only.
+`package.json`, `.github/release-build.sh`) is the reference single-version setup.
 
 ## 1. The shape
 

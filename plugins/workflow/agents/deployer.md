@@ -5,7 +5,7 @@ description: Runs interactive-auth deploy or preview commands (a secret-store
   in the FOREGROUND so the password-manager or biometric prompt is attended. Spawn only after the
   orchestrator has given the user a heads-up. Reports the change plan; never decides
   go/no-go on destructive ops.
-tools: Read, Grep, Glob, Bash
+tools: Read, Grep, Glob, Bash, Skill
 model: inherit
 color: red
 skills:

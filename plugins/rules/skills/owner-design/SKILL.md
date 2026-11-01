@@ -39,9 +39,9 @@ the rule wins and the gap is a finding.
   components that Do One Thing Well." In a private project he kept a one-consumer library
   component after a reviewer failed it on a second-consumer rule. Another: "everything is simpler
   when code is properly compartmentalized." photo-wall's statement of it: reuse never means
-  coupling independent modules or sharing mutable state. In a private infrastructure repo a value
-  two workloads shared became one wired output, and a contract two workloads needed became a
-  general spec in the shared library (a server spec, not one app's type).
+  coupling independent modules or sharing mutable state. In a private project a value two
+  components shared became one wired output, and a contract two of them needed became a general
+  type in the shared library, not one app's type.
 - **The Architects rule.** An architect handed file:line and "generalize the existing X"
   designed a boot recovery that marked a workload stopped and then adopted it back if its process
   was still alive: a race that existed only because the model guessed before it knew. His shape
@@ -51,10 +51,11 @@ the rule wins and the gap is a finding.
   Our goal is not to reinvent the wheel, but to build on the shoulders of giants." In photo-wall
   an architect given a menu of mechanisms built a bespoke leader election; four review rounds
   patched it before he named the standard answer himself (competing consumers on the Postgres
-  queue already running). In a private project two agents agreed a NestJS workaround was
-  "structurally necessary" until a third tested async providers against the official docs. He
+  queue already running). In a private project two agents agreed a framework workaround was
+  "structurally necessary" until a third tested the framework's own idiom against its official
+  docs. He
   leans to off-the-shelf tools and wants custom code justified with measurements.
-- **Right-size, and its counterweight.** A small TFTP stager grew to +3,130 lines over three
+- **Right-size, and its counterweight.** A small helper service grew to +3,130 lines over three
   review rounds; a ~300-line design met every ask ("a lot of code for something that sounds like
   a small problem"). A 2-bug fix grew into a 21-bead protocol redesign ("gone off the rails").
   He ranks by value per unit of new surface: a 15-file kit was "too many changes at once". But:
@@ -98,9 +99,9 @@ the rule wins and the gap is a finding.
 - **Simplicity.** Adversarial reviews attack whatever exists, so defending a big design breeds
   more code: the reason Right-size starts from the smallest design.
 - **Policy leaks.** Under SOLID a caller talks to one decision point and cannot tell whether a
-  mode is on. A private project expressed observe-versus-enforce three ways (a conditional mount,
-  a flag branch, substitutable classes); its reported bug was a port collision, yet the design
-  half of the investigation found six real findings. An optional dependency whose absence meant
+  mode is on. A private project expressed one mode switch three ways (conditional wiring, a flag
+  branch, substitutable classes); its reported bug was small, yet the design half of the
+  investigation found six real findings. An optional dependency whose absence meant
   three different things behind one `?:` is the recurring shape.
 
 ## Vocabulary (designs are built against it; reviews name it)

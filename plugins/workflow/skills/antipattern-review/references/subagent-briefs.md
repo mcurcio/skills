@@ -5,7 +5,7 @@ in parallel. Use a capable model (the reasoning matters); do NOT spawn many iden
 agents — one distinct lens each.
 
 The two things that make a brief produce evidence instead of vibes are the **METHOD**
-(names the grep patterns / CodeGraph queries so the agent doesn't flail) and the **RETURN
+(names the grep patterns, and CodeGraph queries where the repo has `.codegraph/`, so the agent doesn't flail) and the **RETURN
 contract** (conclusions not dumps, `file:line` for everything, short quotes, no diff pastes,
 CONFIRMED vs SUSPECTED, negative space). Keep both in every brief.
 
@@ -32,8 +32,8 @@ events); speculative generality / dead code; naming drift; design-doc-citation c
 config/boot/magic values.
 
 METHOD (be efficient): `git diff --stat` for hotspots; read the diffs of the largest/most
-central changed files; skim tests for theater; use codegraph_explore for blast-radius when a
-smell looks structural. Group into 4-8 DISTINCT clusters; merge near-duplicates.
+central changed files; skim tests for theater; use codegraph_explore (if the repo has `.codegraph/`) for blast-radius
+when a smell looks structural. Group into 4-8 DISTINCT clusters; merge near-duplicates.
 
 RETURN (conclusions, not dumps) — per cluster: name + category; severity (structural/systemic
 vs local) and rough occurrence count; 2-4 evidence anchors (file:line + a SHORT quote each);
@@ -62,7 +62,7 @@ HUNT (from the taxonomy axis — tailor):
 3. <the seam/architecture angle: which layer knows what it shouldn't>
 4. <the second-order consequence: what rots / breaks / is admitted>
 
-METHOD: start from the seed; codegraph_explore its blast radius; grep the diff for <the
+METHOD: start from the seed; find its blast radius (codegraph_explore if the repo has `.codegraph/`); grep the diff for <the
 specific patterns for this axis — see taxonomy>; follow the thread up (DTO/wire/UI) and down
 (store/migration/runtime). Read the relevant spec only to confirm intent.
 

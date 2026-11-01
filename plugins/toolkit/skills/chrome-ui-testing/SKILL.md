@@ -41,7 +41,7 @@ Load the app in fixed-size same-origin iframes instead; the app's media queries 
 iframe size. Measure inside each frame:
 
 ```js
-const sizes=[['small phone',360,780],['large phone',430,932],['foldable folded',466,678],['foldable unfolded',890,626]];
+const sizes=[['small phone',360,780],['large phone',430,932],['tablet',768,1024]];
 document.body.innerHTML=''; const out={};
 for (const [name,w,h] of sizes) for (const p of ['/','/some/detail/route']) {
   const f=document.createElement('iframe'); f.style.cssText=`width:${w}px;height:${h}px;border:0`;

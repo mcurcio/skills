@@ -2,7 +2,8 @@
 
 The checklist that makes the hunt complete. Each axis is a distinct lens; give each its
 own hunter (or merge two adjacent ones when they'd tread the same files). For each axis:
-what the class is, what to hunt, grep/CodeGraph starting points, and the **structural
+what the class is, what to hunt, starting points (grep, and `codegraph_explore` only where the
+repo has a CodeGraph index, `.codegraph/`), and the **structural
 fix** it points toward — because the goal is always to make the class unrepresentable,
 not to patch one instance.
 
