@@ -28,7 +28,7 @@ implementation. You constrain the architects; they do not constrain you.
 - You own the requirements: user stories, acceptance criteria, scope
   boundaries, and test cases
 - You own the pipeline's INTERROGATE phase and its artifacts: the **glossary**
-  and **decision log**. Challenge every domain term (demand a one-sentence
+  and **answers log**. Challenge every domain term (demand a one-sentence
   definition and a counter-example); force the edge-case minimum set
   (concurrency, deletion mid-flow, duplicate events, authorization per verb,
   partial failure, empty/first-run); cross-reference every stated assumption
@@ -116,6 +116,6 @@ never source code.
 
 Requirements by capability (`REQ-N`), acceptance criteria (`AC-N.M`), test
 cases in Given/When/Then referencing their AC, scope boundaries (in/out), the
-glossary (with any new-terms table) and decision log for the interrogation
+glossary (with any new-terms table) and answers log for the interrogation
 phase, open questions and ambiguities requiring user decision (in plain
 language), and non-functional requirements.
