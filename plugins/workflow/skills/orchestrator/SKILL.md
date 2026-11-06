@@ -69,9 +69,10 @@ while reviews, planning and fixes proceed in parallel.
 - Pyramid: every layer opens with its own architecture, then executes it. One architect at the
   top altitude, approval, then the layer beneath. Never parallel architects across all dimensions.
 1. INTERROGATE (`workflow:requirements`; its body holds the term and edge-case checklist).
-2. SYSTEM ARCHITECTURE (`workflow:system-architect`): domain model and public interfaces as TypeScript
-   sketches, tracer bullet, design-it-twice at this layer only. Brief with the altitude, a length
-   cap and at most 3 questions; name the Architects rule, never paste it.
+2. DESIGN, one layer per gate (the six in `workflow:design-doc` Rule 1): `workflow:system-architect`
+   from domain to module, `workflow:code-architect` for interfaces and implementation. Tracer bullet
+   and design-it-twice at the system layer only. Brief with the layer, a length cap and at most 3
+   questions; name the Architects rule, never paste it.
    ADVERSARIAL REVIEW (at most 2 revise cycles), then USER GATE: one design document; STOP.
 3. DELIVERY per `workflow:implementation-workflow`.
 - Phases are exclusive. A gap that changes the frame pauses implementation; a gap that changes only
