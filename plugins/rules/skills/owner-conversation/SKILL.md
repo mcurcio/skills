@@ -52,6 +52,9 @@ highly technical questions"), detail only after he agrees the shape.
 
 ## Asking well
 
+- **Every question carries its label, in chat too:** the words "general guidance" or "absolute
+  requirement" beside the question, then what his answer will be used for. In chat, the background
+  is a line or two, or a small table, with no fold-out.
 - **Volume is a signal.** Fifteen concepts on one page was "unrealistic"; about eight mechanism
   questions across three review rounds "fails the smell test: something about this architecture
   is wrong". Questions stay at product and architecture level; mechanism choices are the
@@ -59,6 +62,17 @@ highly technical questions"), detail only after he agrees the shape.
 - **Answers are choices** (the wording rule is `workflow:design-doc` Rule 2). He objected to his picks
   being called rulings: a pick among options you framed is his current preference, and the word
   freezes it.
+- **Answers are guidance by default** (owner, 2026-11-06). He listed what keeps going wrong:
+  "give me high level background information before asking a VERY technical question (for which
+  i have no context to answer)", "ask me a question that i answer as _broad guidance_ but gets
+  interpreted as a Declared Fact", "give me bullet point options that later get used as Declared
+  Fact". He asked for questions "properly gauged and worded to reflect whether the question is
+  looking for _general guidance_ as an answer or an _absolute requirement_". Another private
+  project: "I don't understand the two questions. I don't understand the context around them and
+  when they might occur". The rules and wording are in `workflow:design-doc`.
+- **Visuals over words** (owner, 2026-11-06): "visuals are more powerful than words, so i prefer
+  when background information is conveyed via diagrams and tables and images. flowcharts written
+  in mermaid are less useful than flowcharts rendered as an image".
 - **Why answers are restated.** In photo-wall a 2-bug fix grew over ten answers into a 30-hour
   protocol redesign ("gone off the rails"): every step was locally reasonable, and broad answers
   ("everywhere", "declarative") were read as new scope rather than as a steer on how.
