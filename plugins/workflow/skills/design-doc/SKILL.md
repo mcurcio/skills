@@ -41,7 +41,7 @@ will be used, because design patterns are encouraged". So every briefing, at eve
 
 - **Domain:** the domain concepts this proposal touches, adds or changes, each linked to the
   agreed domain model, and the changes it imposes on that model. Below the domain layer, a
-  change to the agreed model is a question for him, never a quiet edit.
+  change to the agreed model is a question for the owner, never a quiet edit.
 - **Patterns:** each design pattern the proposal uses, named, linked to its canonical source
   (the pattern's reference, or the framework's own docs) and placed where it is used; any
   departure from the established pattern for this problem, with the reason
@@ -57,7 +57,7 @@ scope, and a long multi-question page cannot be reviewed by a human.
 the technical solution, you must first understand the domain boundaries." On 2026-10-23/24 five
 drafts of one design went straight to watermarks, transports, timers and barriers while the
 bounded contexts (what a standalone Player is versus one directed by Central; preparation as a
-continuous loop, not a one-time step) were never drawn, and the owner had to ask his own
+continuous loop, not a one-time step) were never drawn, and the owner had to ask
 questions to expose the assumptions. So a domain-layer pass opens with the context map: each
 bounded context, what it owns, its language, how contexts relate, and which modes each runs in.
 Briefs to architects carry the problem and the owner's words, never a list of mechanisms to
@@ -89,23 +89,23 @@ Keep two kinds of statement apart, visibly and in every agent brief:
 |---|---|---|
 | What | Hard rules the design must satisfy: owner requirements, documented requirements, external constraints | How this design meets the requirements: shapes, mechanisms, options picked among alternatives |
 | Nature | Binding until the owner changes them | Transient and subjective. Revisable whenever a better option appears |
-| Where they come from | Only the two sources under this table (2026-11-06). A requirement document's rule that quotes neither is an assumption to verify with him, never binding by itself (2026-10-23) | The architect's recommendation, adjusted by the owner's answers |
+| Where they come from | Only the two sources under this table (2026-11-06). A requirement document's rule that quotes neither is an assumption to verify with the owner, never binding by itself (2026-10-23) | The architect's recommendation, adjusted by the owner's answers |
 | On the page | Their own **Requirements** section, as a numbered list (R1, R2, …) with source tags | In the section that describes them, as the current choice with its alternatives |
 
 - **What creates a requirement** (owner, 2026-11-06, answering yes to this wording, addressed to
-  him): "Only two things create a requirement: a question asked as an absolute requirement and
+  the owner): "Only two things create a requirement: a question asked as an absolute requirement and
   answered yes, or a statement where you say it is a rule. Everything else you say, and every
   option you pick, is guidance." Guidance records the current preferred choice and does not freeze
   the design; later evidence can reopen it. A firm statement that is not called a rule gets one
   "is that a rule?" before it binds.
-- **Every statement keeps its source through every handoff:** requirement (his quote, dated),
-  guidance (his quote, dated) or proposed (an agent's option or claim he has not answered). A
+- **Every statement keeps its source through every handoff:** requirement (the owner's quote, dated),
+  guidance (the owner's quote, dated) or proposed (an agent's option or claim the owner has not answered). A
   picked option becomes guidance, recorded as "picked B, worded by the agent"; unpicked options
   are dropped. Briefs, working state and later pages keep the tag.
-- **"Decision" means a specification rule he explicitly stated as one** (owner,
+- **"Decision" means a specification rule the owner explicitly stated as one** (owner,
   2026-11-05: "'Decisions' is not a totally banned word; but we must encode the
   nuance between my general statements and questions vs specification rules that
-  I explicitly state as such"). Never call his answers or general statements
+  I explicitly state as such"). Never call the owner's answers or general statements
   "decisions", and never call them "rulings". Use "questions", "answers" and
   "current choice".
 - **A design that would break a requirement** is not a design choice. Raise it
@@ -121,7 +121,7 @@ Keep two kinds of statement apart, visibly and in every agent brief:
   is a heading, at most two sentences, then a visual.
 - **Visuals:**
   - Drawn diagrams: flowcharts for structure, sequence diagrams for flows, state diagrams only
-    when the state machine *is* this layer's subject. He sees a rendered picture, never Mermaid
+    when the state machine *is* this layer's subject. The owner sees a rendered picture, never Mermaid
     source (owner, 2026-11-06: "flowcharts written in mermaid are less useful than flowcharts
     rendered as an image").
   - Tables for requirements, contracts, data flow and comparisons.
@@ -141,7 +141,7 @@ Keep two kinds of statement apart, visibly and in every agent brief:
   - Each question opens with one plain line saying what is being asked, then a fold-out of the
     background that question needs, at its technical level: a diagram, table or image first (owner,
     2026-11-06: "visuals are more powerful than words"), covering what the thing is, when it
-    comes up and what the answer changes. He can answer from the page without opening code. If
+    comes up and what the answer changes. The owner can answer from the page without opening code. If
     that background will not fit, the question is too deep: the architect makes the call and
     shows it as a recommendation.
   - Each question says what it asks for, in words and in its wording. **General guidance:**
@@ -149,15 +149,15 @@ Keep two kinds of statement apart, visibly and in every agent brief:
     it costs X?", with the exact sentence that would bind and what it rules out. A line under
     the options says how the answer will be used.
   - Each question is a comparison table (`rules:pages` §2): the current choice
-    (recommended) and each alternative, with what it gives, costs and what he would see. A
-    guidance question with no real options may ask for his direction in a note instead.
+    (recommended) and each alternative, with what it gives, costs and what the owner would see. A
+    guidance question with no real options may ask for the owner's direction in a note instead.
   - A "the rest of this section is recommended as shown" line under a section
     lists its smaller choices, so any of them can be reopened.
 
 ## Rule 4: the owner's language
 
-Plain words, known or declared nouns, existing names, no invented machinery, his requirements
-in his words: the rules are `rules:global` §The owner's language; the reasons and the
+Plain words, known or declared nouns, existing names, no invented machinery, the owner's requirements
+in the owner's words: the rules are `rules:global` §The owner's language; the reasons and the
 craft are the `rules:owner-conversation` skill.
 
 ## Briefing structure
@@ -200,7 +200,7 @@ Keep a one-line history in the footer, not a section.
 
 ## Producing it from the pipeline
 
-- **Brief every agent with the layer, the requirements list, his guidance and what is only
+- **Brief every agent with the layer, the requirements list, the owner's guidance and what is only
   proposed, kept apart,** plus a length cap and the question cap. Architects design this layer
   only. Name the Architects rule; `rules:global` already delivers its text.
 - **Reviewers attack the model, not the plan:** does the layer satisfy every requirement, is
@@ -227,7 +227,7 @@ Keep a one-line history in the footer, not a section.
   4. Move deeper detail to working state as input for later gates.
   5. Delete the superseded files in the same commit.
 
-While the owner refines a design in chat, the discussion runs on an Artifact page he answers on
+While the owner refines a design in chat, the discussion runs on an Artifact page the owner answers on
 (`workflow:orchestrator` §Owner gates); subagents return the content and the main session
 publishes it. Publishing, saved answers and the durable PR record: `reference/publishing.md`.
 
@@ -244,10 +244,10 @@ publishes it. Publishing, saved answers and the durable PR record: `reference/pu
   at the bottom.
 - Every question has one plain line, a fold-out of background led by a visual, and says whether it
   wants general guidance or an absolute requirement.
-- Every requirement traces to a question answered yes or a statement he called a rule; nothing
+- Every requirement traces to a question answered yes or a statement the owner called a rule; nothing
   proposed or merely picked is listed as one.
-- Every flowchart reaches him as a rendered picture.
-- "Ruling" and "locked" never describe an owner answer or general statement; "decision" describes only a rule he explicitly stated as one.
+- Every flowchart reaches the owner as a rendered picture.
+- "Ruling" and "locked" never describe an owner answer or general statement; "decision" describes only a rule the owner explicitly stated as one.
 - Every section leads with a visual. No paragraph longer than three sentences.
 - The page passes the `rules:pages` checklist (linked terms, settled vs open, the design pass).
 - TypeScript sketches are multiline, one member per line, commented.

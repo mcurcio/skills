@@ -143,7 +143,7 @@ don't re-run the same ones.
 ### 4. Synthesize and deliver
 
 Write ONE ranked report (structure in `references/report-structure.md`). For the owner,
-this technical report is working state; what he reads is the user-impact report below.
+this technical report is working state; what the owner reads is the user-impact report below.
 Essentials of the technical report:
 
 - **Bottom line up top:** how many clusters, whether any are security-relevant vs
@@ -161,7 +161,7 @@ Essentials of the technical report:
 - **Prioritized action order:** what to land now (small + security), what to decide
   before an interface freezes, what to schedule, what's opportunistic hygiene.
 
-**The owner-facing report (BINDING for the owner, 2026-10-02/03).** He decides fix-the-cause
+**The owner-facing report (BINDING for the owner, 2026-10-02/03).** The owner decides fix-the-cause
 versus patch-the-symptom from user impact, and won't patch a bug without knowing why it
 exists. A technical cluster list, or 27 finding cards, is rejected. Brief the synthesizer to
 produce this shape directly, under a hard length cap:

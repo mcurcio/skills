@@ -1,6 +1,6 @@
 ---
 name: owner-delivery
-description: Why the owner wants work tested, landed and shipped the way his rules say. Reasons and incidents behind the delivery rules in the `rules:global` rules and the agent bodies - CI as the gate, one review at the end, fan-out on disjoint files, evidence over status, tests that prove behaviour, fast tests, unpiped exit codes, undoing edits safely, honest "pre-existing" and NOT RUN claims, landing by PR, watching PRs, releases from the automated flow, pinned runtimes, run estimates, deploy discipline. Use when implementing, verifying, deploying, triaging a red, or deciding what proves a change works.
+description: Why the owner wants work tested, landed and shipped the way the owner's rules say. Reasons and incidents behind the delivery rules in the `rules:global` rules and the agent bodies - CI as the gate, one review at the end, fan-out on disjoint files, evidence over status, tests that prove behaviour, fast tests, unpiped exit codes, undoing edits safely, honest "pre-existing" and NOT RUN claims, landing by PR, watching PRs, releases from the automated flow, pinned runtimes, run estimates, deploy discipline. Use when implementing, verifying, deploying, triaging a red, or deciding what proves a change works.
 ---
 
 # How the owner wants work shipped
@@ -33,14 +33,14 @@ craft; where it seems to differ from a rule, the rule wins.
   followed by a push landed red CI on main. A skipped check stated plainly costs nothing; an
   invented green costs a release.
 
-## Tests he values
+## Tests the owner values
 
 - photo-wall, after a PR with 6.1k test lines for 3.8k product lines: "I prefer integration tests
   that exercise functional requirements rather than unit tests which exercise internal code".
   Another private project keeps unit tests for library logic and functional checks for what it
   runs. The shared rule is behaviour through the real artifact; the unit-to-integration
   balance is the repo's.
-- "All tests should be fast by design": a slow tier is a concession, not a default. He rejected a
+- "All tests should be fast by design": a slow tier is a concession, not a default. The owner rejected a
   10-minute outage step in a CI leg.
 
 ## Landing and shipping
@@ -49,14 +49,14 @@ craft; where it seems to differ from a rule, the rule wins.
   chain ("there is no reason to do that locally"). In photo-wall one workstream took 6 hours
   ("an insane amount of time"), a third of it verifiers re-running locally, at 27 minutes a pass,
   tiers CI ran in parallel in about 12.
-- **By PR, merged by him.** "Always PR; never a direct deploy" (a private project):
+- **By PR, merged by the owner.** "Always PR; never a direct deploy" (a private project):
   the PR keeps a review and audit gate and avoids ad-hoc interactive deploys. PRs can come from a
   separate bot account, so the owner's own account cannot be used by mistake.
-- **Watched PRs.** Asked whether to watch a PR, he answered "Always": red CI and unread comments
+- **Watched PRs.** Asked whether to watch a PR, the owner answered "Always": red CI and unread comments
   had sat unnoticed between batches.
-- **Releases.** He refused to hand-tag a release candidate ("The GHA workflow is supposed to
+- **Releases.** The owner refused to hand-tag a release candidate ("The GHA workflow is supposed to
   handle versioning"). A squash-merge under a non-conventional title released nothing, because
-  the commit type drives the version bump. In ear he rejected release-please's standing release
+  the commit type drives the version bump. In ear the owner rejected release-please's standing release
   PR (2026-11-01: "I don't like release-please. I prefer semantic release and auto releases
   after PRs are merged. Other repos already follow that precedent"): merging the work is the
   release, with no second PR to merge.
@@ -73,24 +73,24 @@ craft; where it seems to differ from a rule, the rule wins.
 
 - **Estimates and briefs.** A design workflow in a private project ran 24 agents with about 180k
   characters of discovery pasted into every prompt; after 90 minutes it had not reached its gate
-  and he stopped it: "this is a failed process" (he had expected the whole feature built in that
+  and the owner stopped it: "this is a failed process" (the owner had expected the whole feature built in that
   time). A photo-wall estimate built from the brief's planning figure (85 minutes a bead) said
   6 hours ("6 hours?!? that's crazy"); measured commit times said about 33 minutes a bead.
 - **A problem, not a solution.** A workflow handed a pre-decided answer freezes a plan made
   before anything was learned, and every discovery becomes a round trip through the main loop.
 - **One review, at the end.** The 6-hour photo-wall workstream (CI is the gate, above) spent
   2 h 15 min in per-lane verify, fix, re-verify and re-review loops; each re-review found a new
-  edge (a port, a licence, IPv6) and restarted the loop. His words in photo-wall: "Don't waste
+  edge (a port, a licence, IPv6) and restarted the loop. The owner's words in photo-wall: "Don't waste
   time verifying each bead in isolation" (2026-09-26); "each adversary and verification must be
   'worth it'. Do larger batches of implementation before paying the overhead of review and
   verification" (2026-10-01). A private project had asked for a verifier and a security review
   at each milestone ("I certainly would prefer to catch issues sooner rather than later",
-  2026-10-04); on 2026-10-09 he kept the newer answer ("keep the newer rules"). The early signal
+  2026-10-04); on 2026-10-09 the owner kept the newer answer ("keep the newer rules"). The early signal
   that remains is CI on every push.
 - **Fan out.** Serial implementers at 20-30 minutes each, every one re-reading a 1,400-line
   design, made a photo-wall delivery take hours: "There should be an orchestration and fanout
   process where one agent reviews the design and spawns many cheaper/faster subagents to quickly
-  build" (2026-09-26); he chose the same checkout, with disjoint files and no merge step. Later,
+  build" (2026-09-26); the owner chose the same checkout, with disjoint files and no merge step. Later,
   slices run one after another inside each lane took 2 h 15 min while the lanes themselves ran in
   parallel. In a private project, parallel worktrees inside one package were offered and not
   used (setup cost, merge conflicts, machine load); fan-out on disjoint files in one checkout has
