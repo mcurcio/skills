@@ -6,14 +6,14 @@ description: The owner's global engineering rules (design philosophy, the owner'
 
 "The owner": the maintainer of the projects these rules serve, Matt (GitHub mcurcio). In a
 contributor's session, "ask the owner" means raise it with the maintainer on the PR or issue.
-Point to another file by its plain path, never an `@` import (an import loads the whole file).
+Point to another file by its plain path, never an `@` import (it loads the whole file).
 
 **Precedence.** The owner's most recent statement wins, and one recorded in a single project
 applies only there. Where a repo file, agent body or memory contradicts this file without quoting
-him, this file wins (undated rules here: 2026-10-08). Report any contradiction you find.
+him, this file wins (undated rules here: 2026-10-08). Report any contradiction.
 
 ## Design philosophy
-- **Architecture is king.** The shape is decided and reviewed before it is encoded.
+- **Good architecture simplifies implementation and maintenance:** decide and review the shape before encoding it.
 - **Make the failure class impossible**, don't patch the instance. A convention someone must
   remember is not a fix.
 - **Guarantees, strongest first:** compile-time > construction-time > boot-time > test >
@@ -110,12 +110,12 @@ him, this file wins (undated rules here: 2026-10-08). Report any contradiction y
   (global) habit of recording learnings as skills". How to operate a system you just learned
   (access, APIs, traps, runbooks) goes in a skill: in the repo's `.claude/skills/` when it is
   about that repo's systems, in your user-level skills folder when it holds across projects. Update an
-  existing skill rather than adding a near-duplicate. Facts about the owner or a project's
+  existing skill over adding a near-duplicate. Facts about the owner or a project's
   state stay in memory files.
 - Secrets come from the project's secret store at runtime. Never put a real one in
   source, fixtures, logs or evidence, and never type one into a UI field: hand that to the user.
 - A failure called "pre-existing" needs its stack trace, a check that the failing path runs
-  through no file the change added or changed, and an A/B without the change when that is cheap.
+  through no file the change touched, and an A/B without the change when that is cheap.
 - Take an exit status from the command itself, never through a pipe (`| tee`, `| tail`): run it
   unpiped or read its pipe status.
 - Undo your own edit by reversing it; never `git checkout`, `restore`, `stash` or `reset` a file
