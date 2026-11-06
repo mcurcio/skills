@@ -1,3 +1,9 @@
+## [1.2.1](https://github.com/mcurcio/skills/compare/v1.2.0...v1.2.1) (2026-11-06)
+
+### Bug Fixes
+
+* **rules:** treat a global rule as background on a design page ([fe96d05](https://github.com/mcurcio/skills/commit/fe96d051bd3325b80e2a24e4d6ab5c9899e25fb3))
+
 ## [1.2.0](https://github.com/mcurcio/skills/compare/v1.1.3...v1.2.0) (2026-11-06)
 
 ### Features
