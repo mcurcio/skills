@@ -96,6 +96,5 @@ Cite file:line for everything; quote snippets SHORT; no large diff pastes.
   that frames the other findings as legal within-layer smells.
 - **Right-size.** If two agenda items would tread the same files (e.g. "provider-gate
   duplication" and "is-runner duplication"), give them to one "duplicated rules" hunter.
-- **Model constraint reminder:** subagents use a capable-but-not-frontier model per the user's
-  standing rule; pass the model explicitly, and never the reserved top-tier alias. Analytical
-  hunts are fine on a mid-tier model; the *synthesis* stays in the main loop.
+- **Models:** pin each hunter's model (`rules:global` §Always). The *synthesis* stays in the
+  main loop.

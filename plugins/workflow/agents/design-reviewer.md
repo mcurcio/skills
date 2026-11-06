@@ -41,12 +41,21 @@ review vocabulary you name findings with.
 **Presence before content.** Name the layer under review and check that the doc
 carries what that layer needs. A missing required artifact is an automatic FAIL
 — report it and stop there.
-- **System layer:** the domain model (concepts, ownership, invariants, what is
-  NOT this context's job); the public interfaces as TypeScript sketches with
-  error modes and invariants; a tracer-bullet definition; a design-it-twice
-  alternative; stated costs; a new-terms table for any term not already defined.
+- **Domain layer:** the context map and domain model (concepts, ownership, states,
+  invariants, what is NOT this context's job); a new-terms table.
+- **System layer:** the public interfaces as TypeScript sketches with error modes
+  and invariants; a tracer-bullet definition; a design-it-twice alternative; stated
+  costs; a new-terms table for any term not already defined. The domain model too,
+  if the page says the domain layer was skipped.
+- **Service layer:** the service map and sequence diagrams of the key flows.
 - **Module layer:** contracts (takes / gives / never), data flow and state
   ownership, stated costs.
+- **Interfaces layer:** the signatures with error unions and invariants, each linked
+  to the code it changes.
+- **Implementation layer:** the algorithm comparison, examples table and slice list.
+  This gate is often a conversation; review a page only if there is one.
+
+A page may skip a layer if it says so (`workflow:design-doc` Rule 1).
 
 Slice pages are not reviewed before code (`workflow:implementation-workflow` §2.3); their
 quality is checked in coherence mode.

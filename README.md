@@ -91,10 +91,17 @@ These skills are good and are not republished here. Install them from their auth
 
 | Plugin | Author | Install |
 |---|---|---|
-| [superpowers](https://github.com/obra/superpowers) (brainstorming, test-driven development, systematic debugging, writing plans, code review and more) | Jesse Vincent | `/plugin install superpowers@claude-plugins-official` |
-| [ponytail](https://github.com/DietrichGebert/ponytail) (quality audits and reviews, a debt ledger) | DietrichGebert | `/plugin marketplace add DietrichGebert/ponytail`, then `/plugin install ponytail@ponytail` |
 | [impeccable](https://github.com/pbakaus/impeccable) (frontend design, critique and polish) | Paul Bakaus | `/plugin marketplace add pbakaus/impeccable`, then `/plugin install impeccable@impeccable` |
 | [security-audit](https://github.com/cloudflare/security-audit-skill) (security review and audits) | Cloudflare | `npx skills add https://github.com/cloudflare/security-audit-skill --skill security-audit` |
+| [domain-modeling](https://github.com/mattpocock/skills) (a project glossary and decision records) | Matt Pocock | `/plugin marketplace add mattpocock/skills`, then `ln -s ~/.claude/plugins/marketplaces/mattpocock/skills/engineering/domain-modeling ~/.claude/skills/domain-modeling` |
+
+`domain-modeling` is linked on its own because a plugin's skills cannot be enabled one at a time,
+and this plugin's others include a spec-to-implementation chain that conflicts with `workflow`.
+
+Superpowers and ponytail are not recommended alongside these plugins, because they conflict with
+the rules here. Superpowers reviews after each task, where `workflow:orchestrator` has one review
+at the end. Ponytail flags an interface with one implementation as unnecessary, where
+`rules:owner-design` says the number of implementations is not the test.
 
 ## Contributing
 

@@ -12,9 +12,9 @@ this page is the testing method.
 
 ## 1. Rules
 
-- **Drive the user's real Chrome** (`mcp__claude-in-chrome__*`). Load the core tools plus
-  `javascript_tool`, `find`, `get_page_text`, `form_input`, `browser_batch`, `resize_window`
-  in ONE ToolSearch call. Work in a new tab (`tabs_create_mcp`); close your tabs at the end.
+- **Drive the user's real Chrome** (`mcp__claude-in-chrome__*`). Testing also needs
+  `javascript_tool`, `find`, `get_page_text`, `form_input`, `browser_batch` and `resize_window`:
+  add them to the tool-loading call `anthropic-skills:chrome-browser` describes.
 - **The user's sign-in is theirs.** The site cookie usually carries their session. Never click Log out
   unless sign-out is the thing under test, and then do it LAST and say so first: logging out
   revokes the server session and they have to sign in again (this cost a round trip on

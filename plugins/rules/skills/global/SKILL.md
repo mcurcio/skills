@@ -117,7 +117,7 @@ him, this file wins (undated rules here: 2026-10-08). Report any contradiction y
 - A failure called "pre-existing" needs its stack trace, a check that the failing path runs
   through no file the change added or changed, and an A/B without the change when that is cheap.
 - Take an exit status from the command itself, never through a pipe (`| tee`, `| tail`): run it
-  unpiped or read `${PIPESTATUS[0]}`.
+  unpiped or read its pipe status.
 - Undo your own edit by reversing it; never `git checkout`, `restore`, `stash` or `reset` a file
   that holds uncommitted work.
 - List every check you skipped or could not run as NOT RUN; never claim a result you did not see.

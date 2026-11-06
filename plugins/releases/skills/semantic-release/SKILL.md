@@ -43,7 +43,8 @@ Precedents: **knobly** (`.github/workflows/ci.yml` job `release`, `.releaserc.js
 
 Root `package.json` (private, release tooling only) pins exact versions, with a lockfile:
 `semantic-release`, `@semantic-release/commit-analyzer`, `@semantic-release/release-notes-generator`,
-`@semantic-release/github`, and `@semantic-release/exec` when a step needs the version. Run it
+`@semantic-release/changelog`, `@semantic-release/git`, `@semantic-release/github`, and
+`@semantic-release/exec` when a step needs the version. Run it
 under the repo's pinned Node (`.nvmrc`). `.releaserc.json`:
 
 ```json
