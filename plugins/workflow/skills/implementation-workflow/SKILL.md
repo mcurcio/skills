@@ -306,7 +306,7 @@ the fix cycles is saved to `wip/` and stops the run, never reverted to continue.
   answer "not a clean slice; here is the blocker" (a missing prerequisite, a live path the change
   breaks) and leave the candidate uncut, the blocker in the run's report. No scoping agent per
   candidate.
-- **Read an issue's notes before calling a candidate owner-blocked.** A later ruling can sit in
+- **Read an issue's notes before calling a candidate owner-blocked.** A later owner answer can sit in
   the notes while the description still says "unresolved"; finders reading only descriptions
   skipped a whole decomposition for a phase. The bead's writer (§4) corrects the description.
 - **Behaviour-preserving covers more than the value.** Test the trickiest valid input. Rewiring

@@ -89,15 +89,20 @@ Keep two kinds of statement apart, visibly and in every agent brief:
 |---|---|---|
 | What | Hard rules the design must satisfy: owner requirements, documented requirements, external constraints | How this design meets the requirements: shapes, mechanisms, options picked among alternatives |
 | Nature | Binding until the owner changes them | Transient and subjective. Revisable whenever a better option appears |
-| Where they come from | The owner (his words, per `rules:global` §The owner's language), or a requirement document's rule that quotes him; an unquoted rule there is an assumption to verify with him, never binding by itself (2026-10-23) | The architect's recommendation, adjusted by the owner's answers |
+| Where they come from | The owner, stating it explicitly as a rule (his words, per `rules:global` §The owner's language), or a requirement document's rule that quotes him; an unquoted rule there is an assumption to verify with him, never binding by itself (2026-10-23) | The architect's recommendation, adjusted by the owner's answers |
 | On the page | Their own **Requirements** section, as a numbered list (R1, R2, …) with source tags | In the section that describes them, as the current choice with its alternatives |
 
-- **An answer is a steer, not a lock.** When the owner picks an option, it
-  records the current preferred choice. It does not become a requirement, and
-  it does not freeze the design; later evidence can reopen it. Only an explicit
-  owner statement ("make this a rule") promotes a choice to a requirement.
-- **Never call answers "decisions" or "rulings"** in the briefing or the
-  record. Use "questions", "answers" and "current choice".
+- **An answer or a general statement is a steer, not a lock.** When the owner
+  picks an option or says something in general, it records the current preferred
+  choice. It does not become a requirement, and it does not freeze the design;
+  later evidence can reopen it. Only an explicit owner statement ("make this a
+  rule") promotes a choice to a requirement.
+- **"Decision" means a specification rule he explicitly stated as one** (owner,
+  2026-11-05: "'Decisions' is not a totally banned word; but we must encode the
+  nuance between my general statements and questions vs specification rules that
+  I explicitly state as such"). Never call his answers or general statements
+  "decisions", and never call them "rulings". Use "questions", "answers" and
+  "current choice".
 - **A design that would break a requirement** is not a design choice. Raise it
   as a question in the Requirements section ("change R6?"), with the reason.
   Never flag it as a departure buried inside a choice.
@@ -144,7 +149,7 @@ sections, never as a section of their own.
 
 1. **Header:** title, status, a **where-am-I strip** (all six layers, this one
    highlighted, each agreed layer above linked to its record), one line saying
-   what the owner is being asked, and the decisions table (`rules:pages` §1).
+   what the owner is being asked, and the open-questions table (`rules:pages` §1).
    On a revision, **What changed since your last look** follows the header.
 2. **Today:** one diagram of what is broken or missing, with the failure points
    marked.
@@ -219,7 +224,7 @@ publishes it. Publishing, saved answers and the durable PR record: `reference/pu
 - Every noun is a known term or in the New terms table; no renamed existing terms.
 - Every question sits under the section that explains it. None are collected
   at the bottom.
-- The words "decision", "ruling" and "locked" never describe an owner answer.
+- "Ruling" and "locked" never describe an owner answer or general statement; "decision" describes only a rule he explicitly stated as one.
 - Every section leads with a visual. No paragraph longer than three sentences.
 - The page passes the `rules:pages` checklist (linked terms, settled vs open, the design pass).
 - TypeScript sketches are multiline, one member per line, commented.

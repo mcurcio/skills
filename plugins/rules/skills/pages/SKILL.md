@@ -16,7 +16,7 @@ The words themselves follow `rules:global` §The owner's language.
 ## 1. The first screen carries the point
 
 - One sentence on what the page is and what he is asked, or what happened.
-- Then the summary that would let him act without scrolling: for a decision page, a table of
+- Then the summary that would let him act without scrolling: for a page with open questions, a table of
   each open question with the recommended answer and its cost, each row linking to its
   question; for a report, the result and its user impact.
 - Everything else follows, in the order he needs it.
