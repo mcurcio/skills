@@ -1,3 +1,11 @@
+## [1.1.1](https://github.com/mcurcio/skills/compare/v1.1.0...v1.1.1) (2026-11-06)
+
+### Bug Fixes
+
+* resolve contradictions between skills, and drop conflicting recommendations ([cfa588e](https://github.com/mcurcio/skills/commit/cfa588e974f32cbd61c7963cc4b2f6fbba69d65b))
+* **workflow:** keep "decision" for rules the owner states as rules ([0045e29](https://github.com/mcurcio/skills/commit/0045e292af29641196b28697bec14b7f4b08d4c2))
+* **workflow:** make the pipeline and architects follow the six-layer ladder ([5165c60](https://github.com/mcurcio/skills/commit/5165c605d0f90376c0a7ea088dc2fc180f989ffd))
+
 ## [1.1.0](https://github.com/mcurcio/skills/compare/v1.0.0...v1.1.0) (2026-11-06)
 
 ### Features
