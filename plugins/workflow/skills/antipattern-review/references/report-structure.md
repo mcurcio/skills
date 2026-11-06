@@ -1,7 +1,7 @@
 # Report structure
 
 Write ONE ranked report (it outlives the terminal and is shareable — paste as a PR review,
-hand to an implementer). For the owner it is working state: he reads the user-impact report
+hand to an implementer). For the owner it is working state: the owner reads the user-impact report
 (SKILL.md §4 and "Owner-facing report" below). Then give a tight spoken summary that leads with
 the security-relevant findings, not the cosmetic ones.
 
@@ -99,7 +99,7 @@ impossible. Examples: one line each (`file:line` in small print).
 
 ## Delivery
 
-- Publish the owner-facing report as a page (Artifact), or put it in a file in the repo he
+- Publish the owner-facing report as a page (Artifact), or put it in a file in the repo the owner
   can open; never a hidden config folder. A synthesizer returns the text; the main loop
   publishes it. The technical report stays in working state.
 - Lead the spoken summary with the security findings and the action order — not a recap of method.

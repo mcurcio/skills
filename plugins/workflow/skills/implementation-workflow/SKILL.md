@@ -285,7 +285,7 @@ land, fan out, and are verified, reviewed and fixed once at the end per §4; a r
 the fix cycles is saved to `wip/` and stops the run, never reverted to continue.
 
 - **The scope is the owner's.** The target idiom, the cost ceiling and the off-limits list are
-  what he picks at the sizing step (`workflow:orchestrator` §Design-first pipeline); keep
+  what the owner picks at the sizing step (`workflow:orchestrator` §Design-first pipeline); keep
   them in one editable place. A candidate that fires a sizing trigger there (a new package
   boundary, a cross-package edge, security or authz) is an owner gate under that pipeline, never
   a tier the run climbs alone: the run leaves it uncut and names it in its report.
@@ -315,7 +315,7 @@ the fix cycles is saved to `wip/` and stops the run, never reverted to continue.
 - **A deletion's doc scope is every file naming the deleted symbol**, not the diff; checks pass
   stale docblocks.
 - **Autonomy.** While checks pass, a run does not send design-preference choices back to the
-  owner; over-asking defeats an unattended run. A fork he must own (a public contract, security,
+  owner; over-asking defeats an unattended run. A fork the owner must own (a public contract, security,
   a frame or design contradiction) follows the rules that already cover it: errata and stop (§4),
   or, at a gate with no one present, persist, notify and END (`workflow:orchestrator`
   §Design-first pipeline).

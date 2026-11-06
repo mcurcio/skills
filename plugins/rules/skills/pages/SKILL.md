@@ -1,6 +1,6 @@
 ---
 name: pages
-description: How every page or report for the owner is presented - an Artifact page, a design gate, a review report, a status or results page, a dashboard. Decision or result first, options as comparison tables, every term linked to its definition with a one-line meaning, answers apart from open questions, what changed since his last look, folded reference detail, and a design pass (impeccable, where installed) before publishing. Load before writing or revising any page or report the owner will read.
+description: How every page or report for the owner is presented - an Artifact page, a design gate, a review report, a status or results page, a dashboard. Decision or result first, options as comparison tables, every term linked to its definition with a one-line meaning, answers apart from open questions, what changed since the owner's last look, folded reference detail, and a design pass (impeccable, where installed) before publishing. Load before writing or revising any page or report the owner will read.
 ---
 
 # Pages for the owner
@@ -9,37 +9,37 @@ The owner, 2026-11-01: "when agents give me artifacts today, they are prose-heav
 to parse. a good designer would be useful in presenting those artifacts in a thoughtful
 manner"; and "I would hope that any jargon and/or terms link out to definitions elsewhere,
 including prior discussions or design docs or existing code interfaces, etc." These rules hold
-for every page an agent makes for him. A design gate also follows `workflow:design-doc` (the
+for every page an agent makes for the owner. A design gate also follows `workflow:design-doc` (the
 ladder and the canonical shape); a review report also follows `workflow:antipattern-review` §4.
 The words themselves follow `rules:global` §The owner's language.
 
 ## 1. The first screen carries the point
 
-- One sentence on what the page is and what he is asked, or what happened.
-- Then the summary that would let him act without scrolling: for a page with open questions, a table of
+- One sentence on what the page is and what the owner is asked, or what happened.
+- Then the summary that would let the owner act without scrolling: for a page with open questions, a table of
   each open question with the recommended answer and its cost, each row linking to its
   question; for a report, the result and its user impact.
-- Everything else follows, in the order he needs it.
+- Everything else follows, in the order the owner needs it.
 
 ## 2. Options are comparison tables
 
 - One table per question: a row per option with **gives**, **costs** and **what you'd see**
-  (a concrete result in his terms: the status line printed, the banner shown, what happens on
+  (a concrete result in the owner's terms: the status line printed, the banner shown, what happens on
   the device or cluster). The recommended row is marked; the whole row selects the option.
 - Above the table: one plain line saying what is asked, then a fold-out of the background that
   question needs, led by a diagram, table or image. A cell is a phrase, not a paragraph.
 
 ## 3. Answered apart from open
 
-- An earlier answer of his is shown as answered: his words, the date, a link to where they are
+- An earlier answer of the owner's is shown as answered: the owner's words, the date, a link to where they are
   recorded, and whether it is guidance or a requirement. Only open questions take input.
 - A revision opens with **What changed since your last look**: a short list of what moved,
-  each linking to its section. He does not re-read a page to find the difference.
+  each linking to its section. The owner does not re-read a page to find the difference.
 
 ## 4. Every term links to its definition
 
 - Each term of art, project term or piece of jargon is a link to where it is defined, best
-  first: his own words (the project's notes doc), the design doc section, the code (a public
+  first: the owner's own words (the project's notes doc), the design doc section, the code (a public
   interface, pinned to a commit with a line anchor), the tool's or library's own docs.
 - Each link carries a one-line meaning shown on hover and keyboard focus. On a phone the first
   tap shows the meaning and the second follows the link.
@@ -49,18 +49,18 @@ The words themselves follow `rules:global` §The owner's language.
 
 ## 5. Short, with the depth folded away
 
-- The visible page holds what he needs to decide or act, at about 600 words. Reference detail
+- The visible page holds what the owner needs to decide or act, at about 600 words. Reference detail
   for reviewers (contracts, wire types, full requirement lists, plans) sits in one folded
   section.
 - A paragraph over three sentences becomes a table, a list or a diagram. Background is a visual
-  before it is words; a flowchart reaches him as a rendered picture, never Mermaid source.
+  before it is words; a flowchart reaches the owner as a rendered picture, never Mermaid source.
 - Structure carries information: no labels above headings, no section numbers unless the
   order matters, no cards around every block.
 
 ## 6. A designer's pass before publishing
 
 The `impeccable` skill (pbakaus/impeccable) is that designer, where it is installed. Before a
-page goes to him:
+page goes to the owner:
 
 1. Where installed, run its `distill`, `clarify` and `layout` passes on the page, and read its
    craft floor.
@@ -70,10 +70,10 @@ page goes to him:
 
 ## Pre-publish checklist
 
-- The first screen alone tells him what is asked or what happened.
+- The first screen alone tells the owner what is asked or what happened.
 - Every question has a plain line, a fold-out of background led by a visual, and a comparison
   table with gives, costs and what you'd see.
-- His earlier answers are shown as answered, with his words and their kind; a revision says what
+- The owner's earlier answers are shown as answered, with the owner's words and their kind; a revision says what
   changed.
 - Every term links to its definition and shows a one-line meaning; every link loads.
 - The visible page is about 600 words or less; reference detail is folded.

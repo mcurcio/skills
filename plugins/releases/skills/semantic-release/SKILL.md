@@ -90,7 +90,7 @@ under the repo's pinned Node (`.nvmrc`). `.releaserc.json`:
 
 - No `v*` tag yet: the first release is `1.0.0`, whatever the history says. semantic-release
   has no 0.x mode; a breaking change on 1.x makes 2.0.0. If the owner wants 0.x, ask, then seed
-  a tag (`v0.1.0` on an old commit) by his hand or a one-off run he approves.
+  a tag (`v0.1.0` on an old commit) by the owner's hand or a one-off run the owner approves.
 - The first release reads the whole history. A `git subtree add` without `--squash` merges the
   upstream project's whole history into the repo, so those commits are ancestors too. Their
   git-style `Revert "..."` messages parse as reverts and land in the notes and, for good, in
@@ -125,7 +125,7 @@ under the repo's pinned Node (`.nvmrc`). `.releaserc.json`:
    and delete its `release-please--branches--*` branch, once the replacing PR merges (until then
    release-please keeps refreshing it).
 3. The Actions setting "Allow GitHub Actions to create and approve pull requests" is no longer
-   needed; tell the owner he may turn it off.
+   needed; tell the owner it can be turned off.
 4. Fix every doc that says how releases happen (AGENTS.md, CONTRIBUTING, design docs, skills).
 
 ## 5. Traps

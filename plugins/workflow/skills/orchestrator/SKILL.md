@@ -91,13 +91,13 @@ while reviews, planning and fixes proceed in parallel.
 - Frame level, 1-2 pages, at most 3 questions (`workflow:design-doc` Rule 1, "Question volume").
 - A revision is the same length or shorter. Many findings -> fix the domain model, never fold them
   in as mechanisms. Condense before republishing.
-- Before a gate page, a question or a report to him, read the `rules:owner-conversation` skill.
-- While he refines a design in chat, discuss it on an Artifact page he answers on (answers
-  saved), not a markdown file (owner, 2026-10-06; kept 2026-10-09). Keep his words verbatim and
+- Before a gate page, a question or a report to the owner, read the `rules:owner-conversation` skill.
+- While the owner refines a design in chat, discuss it on an Artifact page the owner answers on (answers
+  saved), not a markdown file (owner, 2026-10-06; kept 2026-10-09). Keep the owner's words verbatim and
   dated in one notes doc.
 - Where the repo gates by PR, the gate goes out as a PR (`workflow:design-doc`
   `reference/publishing.md`); merge unblocks.
-- Never send him to read a file outside the working tree or in a hidden config folder.
+- Never send the owner to read a file outside the working tree or in a hidden config folder.
 
 ## Specialists and adversarial review
 - Name the specialty in the brief ("you are a <framework> expert"), for design and review.

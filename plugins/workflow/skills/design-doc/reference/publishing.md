@@ -11,7 +11,7 @@ while the owner refines in chat, PR gating, where owner-facing files may live) a
   contract). Use a plain markdown file only when the owner asks for one.
 - Flowcharts render as pictures: `<pre class="mermaid">` on a page, which draws them (quote edge
   labels that contain punctuation; use `<br/>` for line breaks in labels), or an image. Never
-  Mermaid source as the thing he reads, including in chat: where a surface cannot draw it, send
+  Mermaid source as the thing the owner reads, including in chat: where a surface cannot draw it, send
   an image or a page.
 - The page works at phone width and in dark mode.
 
@@ -25,7 +25,7 @@ while the owner refines in chat, PR gating, where owner-facing files may live) a
   answers** button writing one doc (`gate/answers`: `{Q1:{choice,kind,question,note}, …,
   feedback:{note}, savedAt}`, where `kind` is general guidance or absolute requirement and
   `question` is its wording), and **Copy as text** for pasting into chat. On load, subscribe to the doc and
-  restore saved answers. (A page with only Copy lost the owner's answers once: he answers on
+  restore saved answers. (A page with only Copy lost the owner's answers once: the owner answers on
   the page, often from another device.)
 - **When saving isn't available:** if `claude.use("db")` resolves `null`, hide Save and keep
   Copy.
@@ -36,8 +36,8 @@ while the owner refines in chat, PR gating, where owner-facing files may live) a
 
 ## From chat to gate to record
 
-1. **While he refines:** put the discussion material (questions, options, drafts) on an
-   Artifact page he can answer on, saving answers as above, and relay a short summary and the
+1. **While the owner refines:** put the discussion material (questions, options, drafts) on an
+   Artifact page the owner can answer on, saving answers as above, and relay a short summary and the
    link in chat; never a markdown file. Update the same page as the discussion moves, condensed
    rather than grown, and keep the notes doc (`workflow:orchestrator` §Owner gates).
 2. **At the gate:** publish the briefing when the layer has settled or the owner asks to see

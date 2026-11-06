@@ -2,7 +2,7 @@
 
 Matt Curcio's ([mcurcio](https://github.com/mcurcio)) shared engineering rules, skills and agents,
 published as a [Claude Code plugin marketplace](https://code.claude.com/docs/en/plugin-marketplaces)
-named `mcurcio-skills`. His projects opt in to it, so every contributor's Claude Code session, and
+named `mcurcio-skills`. Matt's projects opt in to it, so every contributor's Claude Code session, and
 every other agent or person who reads the files, works to the same rules, kept in one place.
 
 "The owner" in these files is defined once, at the top of `plugins/rules/skills/global/SKILL.md`.
