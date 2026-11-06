@@ -21,8 +21,7 @@ him, this file wins (undated rules here: 2026-10-08). Report any contradiction.
 - **Depend on abstractions across boundaries**, never on concrete classes. Keep domain logic free
   of I/O: effects live in adapters at the edges.
 - **Coordinate by events, never timers** (owner, 2026-10-24: "It's all event driven"). A timer,
-  poll or start time guessed ahead standing in for an event is a race; a participant moves when
-  the event it waits for arrives.
+  poll or start time guessed ahead standing in for an event is a race.
 - **One concept, one domain.** Never derive one concept's state from another's signals (he
   rejected judging node health from missed "ready" events, 2026-10-24: health is its own
   process). Each domain has its own judge.
@@ -30,10 +29,9 @@ him, this file wins (undated rules here: 2026-10-08). Report any contradiction.
   definition of it (one state machine, one contract), never a flow per component.
 - **Trace every invariant to the owner before encoding it.** A rule in a requirements doc with
   no quote from him is an assumption: verify it before a design rests on it or code enforces it
-  (owner, 2026-10-23; the case is in `rules:owner-design`). A pick among offered
-  options is a revisable choice, never a requirement.
+  (owner, 2026-10-23; the case is in `rules:owner-design`).
 - **DRY and SOLID.** The owner: "I value DRY and SOLID much more than YAGNI" (a private repo,
-  2026-07-15); asked whether that holds outside it: "DRY and SOLID are always important"
+  2026-07-15); "DRY and SOLID are always important"
   (2026-10-08).
   Single-responsibility modules behind interfaces, and one authoritative home for each rule,
   value or policy, in code and docs alike. YAGNI may remove unused features and speculative
@@ -43,14 +41,13 @@ him, this file wins (undated rules here: 2026-10-08). Report any contradiction.
 - **Prior art first.** Name the established pattern, mature tool or framework idiom (from its
   official docs) before designing a mechanism, and justify any bespoke one against it. A repo doc
   calling a non-idiomatic pattern "necessary" is a claim to test, not proof.
-- **Right-size.** A small problem gets a small solution: start from the smallest design that meets
-  the owner's literal asks and justify every addition; delete unrequested machinery rather than
+- **Right-size.** Start from the smallest design that meets
+  his literal asks and justify every addition; delete unrequested machinery rather than
   harden it. Never remove good code just to save lines.
 - **One source of truth per piece of state.** A cache, in memory or on disk, never wins over its
   source; correctness and health hold with the cache empty.
-- **Audit fields are part of every record.** A tenet of good database design, not a feature to
-  be asked for: every persisted record carries when it was created and by whom, and when it was
-  last changed and by whom, as its own columns written by the persistence layer (next rule), never
+- **Every persisted record carries audit fields:** when it was created and by whom, and when it
+  was last changed and by whom, as its own columns written by the persistence layer (next rule), never
   derived from other data (permissions, history, logs). An append-only event table meets this
   through its rows (one event, its actor and time). Owner, 2026-10-24.
 - **Persistence lives behind repositories** (domain-driven design's layered architecture and
@@ -59,9 +56,7 @@ him, this file wins (undated rules here: 2026-10-08). Report any contradiction.
   infrastructure layer's repositories, built on an ORM, ODM or query-builder layer.
   Cross-cutting persistence concerns (soft delete, audit-field stamping, tenancy filters) are
   applied once in that layer by an established library or the ORM's own feature (global
-  query filters, scopes, soft-delete plugins), never written by hand in each query. So a read
-  cannot skip them by mistake. Soft delete is a valid technique where it fits; this rule is
-  what makes it safe. Owner, 2026-10-24 (quoted in `rules:owner-design`).
+  query filters, scopes, soft-delete plugins), never written by hand in each query. Soft delete is valid where it fits. Owner, 2026-10-24 (quoted in `rules:owner-design`).
 - **State costs, don't sell:** say what a design gives up, leaves uncovered and defers.
 - **The spec is the source of truth.** Code that disagrees has a bug, unless the work proved the
   spec wrong; report that as a finding, never diverge silently.
@@ -84,6 +79,12 @@ him, this file wins (undated rules here: 2026-10-08). Report any contradiction.
 - A requirement credited to him quotes his words, dated, with its source; never present an
   inference, a default or a design choice as his. Restate his answer in his words before building
   on it: a principle he states steers how, it does not widen what is in scope.
+- Every question to him, chat included, first gives the background it needs, visually where
+  possible (drawn, never Mermaid source), and is labelled "general guidance" or "absolute
+  requirement".
+- Only two things make a requirement (owner, 2026-11-06): a question asked as an absolute
+  requirement and answered yes, or a statement he calls a rule. All else he says or picks is
+  revisable guidance; keep that tag in handoffs.
 - Never assume an expensive constraint he has not stated (keep data, stay compatible, can't
   recreate) or a detail he can supply in a minute (a reference screenshot): ask one plain question.
 
@@ -108,7 +109,7 @@ him, this file wins (undated rules here: 2026-10-08). Report any contradiction.
 - Report where the spec, plan or brief is wrong; that is a finding.
 - **Record learnings as skills.** Owner, 2026-10-09 (a private project): "I want to start making a
   (global) habit of recording learnings as skills". How to operate a system you just learned
-  (access, APIs, traps, runbooks) goes in a skill: in the repo's `.claude/skills/` when it is
+  goes in a skill: in the repo's `.claude/skills/` when it is
   about that repo's systems, in your user-level skills folder when it holds across projects. Update an
   existing skill over adding a near-duplicate. Facts about the owner or a project's
   state stay in memory files.

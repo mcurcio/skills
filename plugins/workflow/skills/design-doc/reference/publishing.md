@@ -9,8 +9,10 @@ while the owner refines in chat, PR gating, where owner-facing files may live) a
 
 - An HTML page published as an Artifact (follow the Artifact tool's quickstart and page
   contract). Use a plain markdown file only when the owner asks for one.
-- Mermaid as `<pre class="mermaid">`. Quote edge labels that contain punctuation; use `<br/>`
-  for line breaks in labels.
+- Flowcharts render as pictures: `<pre class="mermaid">` on a page, which draws them (quote edge
+  labels that contain punctuation; use `<br/>` for line breaks in labels), or an image. Never
+  Mermaid source as the thing he reads, including in chat: where a surface cannot draw it, send
+  an image or a page.
 - The page works at phone width and in dark mode.
 
 ## Anything that looks selectable must be selectable
@@ -20,8 +22,9 @@ while the owner refines in chat, PR gating, where owner-facing files may live) a
   free-form feedback field.
 - **Saving:** declare the `db` capability (load the `artifact-capabilities` skill first). A
   sticky bar shows "N of M answered" with a link to the next unanswered question, a **Save
-  answers** button writing one doc (`gate/answers`: `{Q1:{choice,note}, …, feedback:{note},
-  savedAt}`), and **Copy as text** for pasting into chat. On load, subscribe to the doc and
+  answers** button writing one doc (`gate/answers`: `{Q1:{choice,kind,question,note}, …,
+  feedback:{note}, savedAt}`, where `kind` is general guidance or absolute requirement and
+  `question` is its wording), and **Copy as text** for pasting into chat. On load, subscribe to the doc and
   restore saved answers. (A page with only Copy lost the owner's answers once: he answers on
   the page, often from another device.)
 - **When saving isn't available:** if `claude.use("db")` resolves `null`, hide Save and keep
@@ -49,5 +52,5 @@ while the owner refines in chat, PR gating, where owner-facing files may live) a
 ## Publishing checklist
 
 - Options really are selectable, and the page saves them (`db`) with a Copy fallback.
-- Mermaid renders; the page reads at phone width and in dark mode.
+- Each flowchart shows as a drawn picture; the page reads at phone width and in dark mode.
 - One `ArtifactData list gate` check after publishing.

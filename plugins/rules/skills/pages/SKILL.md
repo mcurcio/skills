@@ -1,6 +1,6 @@
 ---
 name: pages
-description: How every page or report for the owner is presented - an Artifact page, a design gate, a review report, a status or results page, a dashboard. Decision or result first, options as comparison tables, every term linked to its definition with a one-line meaning, settled answers apart from open questions, what changed since his last look, folded reference detail, and a design pass (impeccable, where installed) before publishing. Load before writing or revising any page or report the owner will read.
+description: How every page or report for the owner is presented - an Artifact page, a design gate, a review report, a status or results page, a dashboard. Decision or result first, options as comparison tables, every term linked to its definition with a one-line meaning, answers apart from open questions, what changed since his last look, folded reference detail, and a design pass (impeccable, where installed) before publishing. Load before writing or revising any page or report the owner will read.
 ---
 
 # Pages for the owner
@@ -26,12 +26,13 @@ The words themselves follow `rules:global` §The owner's language.
 - One table per question: a row per option with **gives**, **costs** and **what you'd see**
   (a concrete result in his terms: the status line printed, the banner shown, what happens on
   the device or cluster). The recommended row is marked; the whole row selects the option.
-- The question's reason is one sentence above the table. A cell is a phrase, not a paragraph.
+- Above the table: one plain line saying what is asked, then a fold-out of the background that
+  question needs, led by a diagram, table or image. A cell is a phrase, not a paragraph.
 
-## 3. Settled apart from open
+## 3. Answered apart from open
 
-- An earlier answer of his is shown as settled: his words, the date, a link to where they are
-  recorded. Only open questions take input.
+- An earlier answer of his is shown as answered: his words, the date, a link to where they are
+  recorded, and whether it is guidance or a requirement. Only open questions take input.
 - A revision opens with **What changed since your last look**: a short list of what moved,
   each linking to its section. He does not re-read a page to find the difference.
 
@@ -51,8 +52,8 @@ The words themselves follow `rules:global` §The owner's language.
 - The visible page holds what he needs to decide or act, at about 600 words. Reference detail
   for reviewers (contracts, wire types, full requirement lists, plans) sits in one folded
   section.
-- A reason is one sentence. A paragraph over three sentences becomes a table, a list or a
-  diagram.
+- A paragraph over three sentences becomes a table, a list or a diagram. Background is a visual
+  before it is words; a flowchart reaches him as a rendered picture, never Mermaid source.
 - Structure carries information: no labels above headings, no section numbers unless the
   order matters, no cards around every block.
 
@@ -70,8 +71,10 @@ page goes to him:
 ## Pre-publish checklist
 
 - The first screen alone tells him what is asked or what happened.
-- Every question is a comparison table with gives, costs and what you'd see.
-- His earlier answers are shown as settled, with his words; a revision says what changed.
+- Every question has a plain line, a fold-out of background led by a visual, and a comparison
+  table with gives, costs and what you'd see.
+- His earlier answers are shown as answered, with his words and their kind; a revision says what
+  changed.
 - Every term links to its definition and shows a one-line meaning; every link loads.
 - The visible page is about 600 words or less; reference detail is folded.
 - Where impeccable is installed, its pass and detector ran, and their findings are fixed.

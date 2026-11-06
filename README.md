@@ -110,7 +110,8 @@ at the end. Ponytail flags an interface with one implementation as unnecessary, 
 - Plugin evals live in `evals/` and need a logged-in `claude` (CI does not run them). Run them
   from the repo root, with results under `.work/`, which the privacy check skips:
   `claude plugin eval . --tag trigger --ablation none --output-dir .work/evals/trigger`. Run the
-  `hook` tag first and without `--ablation none`: its no-plugin arm is the control. An eval run
+  `hook` tag first and without `--ablation none`: its no-plugin arm is the control. The `framing` tag grades questions and requirements with a judge
+  model, so it costs more than the free `hook` and `trigger` graders. An eval run
   installs nothing, so a plugin with an unmet `dependencies` entry is disabled while the run
   still scores, and only that case's failure shows it. Each case lists the plugins it needs in
   `plugins`; a dependency from another marketplace cannot be met in an eval.

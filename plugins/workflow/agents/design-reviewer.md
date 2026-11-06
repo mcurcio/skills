@@ -63,7 +63,10 @@ quality is checked in coherence mode.
 Do NOT fail a frame-level gate for lacking a feature-wide dependency DAG or
 whole-feature frozen interfaces: interfaces are frozen per slice (the
 `workflow:implementation-workflow` skill). DO fail a page that dives below its layer
-(mechanism detail on a system-layer page).
+(mechanism detail on a system-layer page). DO fail a requirement that traces to neither a
+question he answered yes as an absolute requirement nor a statement he called a rule, and a
+question with no background of its own or no stated kind of answer (`workflow:design-doc` Rule 2
+and Rule 3).
 
 **Attack the premises, not conformance to a plan.** Take the design's
 load-bearing premises and the problem evidence: is each premise right, what
