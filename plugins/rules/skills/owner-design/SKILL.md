@@ -11,8 +11,8 @@ the rule wins and the gap is a finding.
 
 ## Where his rules come from
 
-- **Architecture is king.** "A good architecture can survive a bad engineer"; Code Complete and
-  Fowler are his touchstones. A diagram costs him a minute, a landed module a rewrite. In a
+- **Good architecture simplifies implementation and maintenance.** "A good architecture can
+  survive a bad engineer"; Code Complete and Fowler are his touchstones. A diagram costs him a minute, a landed module a rewrite. In a
   private project, five modules were designed inside implementer prompts he never saw, and a
   digest design churned through three rounds until one question of his collapsed it: "why would
   a sha digest leak into the [project's] server?" He wants to argue the shape before code, and
