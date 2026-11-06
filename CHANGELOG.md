@@ -1,3 +1,9 @@
+## [1.1.0](https://github.com/mcurcio/skills/compare/v1.0.0...v1.1.0) (2026-11-06)
+
+### Features
+
+* pages skill, six-layer design ladder and canonical shape ([9390655](https://github.com/mcurcio/skills/commit/93906551753e57482342a0f1d2d1867b432476e0))
+
 ## 1.0.0 (2026-11-01)
 
 ### Features
