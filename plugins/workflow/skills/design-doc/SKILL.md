@@ -98,6 +98,9 @@ Keep two kinds of statement apart, visibly and in every agent brief:
   option you pick, is guidance." Guidance records the current preferred choice and does not freeze
   the design; later evidence can reopen it. A firm statement that is not called a rule gets one
   "is that a rule?" before it binds.
+- **A global rule is background on a design page** (owner, 2026-11-06, asked whether one counts
+  as a requirement there: "its background"). Agents still follow it. The page cites it as guidance,
+  and it joins the Requirements section only if the owner says so for that design.
 - **Every statement keeps its source through every handoff:** requirement (the owner's quote, dated),
   guidance (the owner's quote, dated) or proposed (an agent's option or claim the owner has not answered). A
   picked option becomes guidance, recorded as "picked B, worded by the agent"; unpicked options
