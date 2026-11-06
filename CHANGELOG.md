@@ -1,3 +1,9 @@
+## [1.2.0](https://github.com/mcurcio/skills/compare/v1.1.3...v1.2.0) (2026-11-06)
+
+### Features
+
+* **rules:** make every question carry its background and kind of answer ([7f05fb2](https://github.com/mcurcio/skills/commit/7f05fb2a42f59a10081f3baa429f740ee793e793))
+
 ## [1.1.3](https://github.com/mcurcio/skills/compare/v1.1.2...v1.1.3) (2026-11-06)
 
 ### Bug Fixes
