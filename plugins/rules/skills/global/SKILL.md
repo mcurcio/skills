@@ -6,7 +6,7 @@ description: The owner's global engineering rules (design philosophy, the owner'
 
 "The owner": the maintainer of the projects these rules serve, Matt (GitHub mcurcio). In a
 contributor's session, "ask the owner" means raise it with the maintainer on the PR or issue.
-Point to another file by its plain path, never an `@` import (it loads the whole file).
+Point to another file by its plain path, never an `@` import.
 
 **Precedence.** The owner's most recent statement wins, and one recorded in a single project
 applies only there. Where a repo file, agent body or memory contradicts this file without quoting
@@ -52,7 +52,7 @@ the owner, this file wins (undated rules here: 2026-10-08). Report any contradic
   through its rows (one event, its actor and time). Owner, 2026-10-24.
 - **Persistence lives behind repositories** (domain-driven design's layered architecture and
   Repository pattern). The domain layer never touches the database: it asks a repository,
-  one per aggregate, through an interface. Every database operation sits in the
+  one per aggregate, through an interface. All database work sits in the
   infrastructure layer's repositories, built on an ORM, ODM or query-builder layer.
   Cross-cutting persistence concerns (soft delete, audit-field stamping, tenancy filters) are
   applied once in that layer by an established library or the ORM's own feature (global
@@ -84,7 +84,8 @@ the owner, this file wins (undated rules here: 2026-10-08). Report any contradic
   requirement".
 - Only two things make a requirement (owner, 2026-11-06): a question asked as an absolute
   requirement and answered yes, or a statement the owner calls a rule. All else said or picked is
-  revisable guidance; keep that tag in handoffs.
+  revisable guidance, and a rule here is background on a design page;
+  keep that tag in handoffs.
 - Never assume an unstated expensive constraint (keep data, stay compatible, can't
   recreate) or a detail the owner can supply in a minute (a reference screenshot): ask one plain question.
 
@@ -106,7 +107,7 @@ the owner, this file wins (undated rules here: 2026-10-08). Report any contradic
 - Run a repo's tools under its pinned runtime (`.nvmrc`, the lockfile), never the shell's default.
 
 ## Always
-- Report where the spec, plan or brief is wrong; that is a finding.
+- Report where the spec, plan or brief is wrong.
 - **Record learnings as skills.** Owner, 2026-10-09 (a private project): "I want to start making a
   (global) habit of recording learnings as skills". How to operate a system you just learned
   goes in a skill: in the repo's `.claude/skills/` when it is
