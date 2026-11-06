@@ -1,6 +1,7 @@
 ---
 description: Does the SessionStart hook's output reach the model in an eval run? No tools, so the text can only come from the injected orchestrator policy. Run it with a no-plugin arm as the control.
 tags: [hook]
+plugins: ["../../plugins/workflow", "../../plugins/rules"]
 max_turns: 2
 allowed_tools: []
 ---
