@@ -36,9 +36,6 @@ Commit this as the project's `.claude/settings.json` (or merge it into the one t
     "mcurcio-skills": {
       "source": { "source": "github", "repo": "mcurcio/skills" },
       "autoUpdate": true
-    },
-    "impeccable": {
-      "source": { "source": "github", "repo": "pbakaus/impeccable" }
     }
   },
   "enabledPlugins": {
@@ -50,11 +47,8 @@ Commit this as the project's `.claude/settings.json` (or merge it into the one t
 ```
 
 Leave out `releases` if the project does not release. `workflow` gives contributors the maintainer's
-main-session process and agents too (the maintainer's choice, 2026-11-01). Keep the `impeccable`
-entry: `rules` requires the `impeccable` plugin from that marketplace, and without the marketplace
-`rules` fails to load (Claude Code installs the plugin itself once the marketplace is known). A
-contributor gets the plugins once they
-trust the project folder in Claude Code; the first session may say "Plugins changed. Run
+main-session process and agents too (the maintainer's choice, 2026-11-01). `workflow` requires
+`rules`, so keep both. A contributor gets the plugins once they trust the project folder in Claude Code; the first session may say "Plugins changed. Run
 /reload-plugins". One person can turn a plugin off for themselves with
 `"rules@mcurcio-skills": false` in `.claude/settings.local.json`.
 
@@ -68,7 +62,6 @@ Add a pointer to the project's `AGENTS.md` for other agents and for people:
 To use the plugins in every project on your machine instead:
 
 ```
-/plugin marketplace add pbakaus/impeccable
 /plugin marketplace add mcurcio/skills
 /plugin install rules@mcurcio-skills
 /plugin install workflow@mcurcio-skills
@@ -115,10 +108,12 @@ at the end. Ponytail flags an interface with one implementation as unnecessary, 
 - Run `scripts/check.sh` after `npm ci` (Node 24, see `.nvmrc`; set `CLAUDE` to your `claude`
   binary, or to `node_modules/.bin/claude`). CI runs the same on every pull request.
 - Plugin evals live in `evals/` and need a logged-in `claude` (CI does not run them). Run them
-  through `scripts/eval.sh`, which explains why it tests a copy, with results under `.work/`:
-  `scripts/eval.sh --tag trigger --ablation none --output-dir "$PWD/.work/evals/trigger"`. Run
-  the `hook` tag first and without `--ablation none`: its no-plugin arm is the control, and a
-  failure there can mean no plugin loaded, which every other case would hide.
+  from the repo root, with results under `.work/`, which the privacy check skips:
+  `claude plugin eval . --tag trigger --ablation none --output-dir .work/evals/trigger`. Run the
+  `hook` tag first and without `--ablation none`: its no-plugin arm is the control. An eval run
+  installs nothing, so a plugin with an unmet `dependencies` entry is disabled while the run
+  still scores, and only that case's failure shows it. Each case lists the plugins it needs in
+  `plugins`; a dependency from another marketplace cannot be met in an eval.
 - Commits and pull request titles follow [Conventional Commits](https://www.conventionalcommits.org):
   `fix` cuts a patch release, `feat` a minor one, `!` or `BREAKING CHANGE:` a major one. Merging
   to `main` is the release: semantic-release appends the notes to `CHANGELOG.md`, tags `v<version>`

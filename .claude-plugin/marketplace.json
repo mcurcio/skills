@@ -6,9 +6,6 @@
     "name": "Matt Curcio",
     "url": "https://github.com/mcurcio"
   },
-  "allowCrossMarketplaceDependenciesOn": [
-    "impeccable"
-  ],
   "plugins": [
     {
       "name": "rules",
