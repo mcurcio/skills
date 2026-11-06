@@ -1,6 +1,6 @@
 ---
 name: pages
-description: How every page or report for the owner is presented - an Artifact page, a design gate, a review report, a status or results page, a dashboard. Decision or result first, options as comparison tables, every term linked to its definition with a one-line meaning, settled answers apart from open questions, what changed since his last look, folded reference detail, and an impeccable design pass before publishing. Load before writing or revising any page or report the owner will read.
+description: How every page or report for the owner is presented - an Artifact page, a design gate, a review report, a status or results page, a dashboard. Decision or result first, options as comparison tables, every term linked to its definition with a one-line meaning, settled answers apart from open questions, what changed since his last look, folded reference detail, and a design pass (impeccable, where installed) before publishing. Load before writing or revising any page or report the owner will read.
 ---
 
 # Pages for the owner
@@ -58,11 +58,13 @@ The words themselves follow `rules:global` §The owner's language.
 
 ## 6. A designer's pass before publishing
 
-The `impeccable` skill (pbakaus/impeccable, required by this plugin) is that designer. Before a
+The `impeccable` skill (pbakaus/impeccable) is that designer, where it is installed. Before a
 page goes to him:
 
-1. Run its `distill`, `clarify` and `layout` passes on the page, and read its craft floor.
-2. Run its detector over the file (`impeccable detect --json <file>`) and fix what it finds.
+1. Where installed, run its `distill`, `clarify` and `layout` passes on the page, and read its
+   craft floor.
+2. Where installed, run its detector over the file (`impeccable detect --json <file>`) and fix
+   what it finds.
 3. Check the page once at phone width and in both themes where the session can render it.
 
 ## Pre-publish checklist
@@ -72,4 +74,4 @@ page goes to him:
 - His earlier answers are shown as settled, with his words; a revision says what changed.
 - Every term links to its definition and shows a one-line meaning; every link loads.
 - The visible page is about 600 words or less; reference detail is folded.
-- The impeccable pass and its detector ran, and their findings are fixed.
+- Where impeccable is installed, its pass and detector ran, and their findings are fixed.

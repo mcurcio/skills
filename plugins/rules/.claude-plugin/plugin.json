@@ -6,8 +6,5 @@
     "url": "https://github.com/mcurcio"
   },
   "homepage": "https://github.com/mcurcio/skills",
-  "repository": "https://github.com/mcurcio/skills",
-  "dependencies": [
-    "impeccable@impeccable"
-  ]
+  "repository": "https://github.com/mcurcio/skills"
 }
