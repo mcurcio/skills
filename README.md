@@ -114,6 +114,11 @@ at the end. Ponytail flags an interface with one implementation as unnecessary, 
   projects. Cite a private project as "a private project".
 - Run `scripts/check.sh` after `npm ci` (Node 24, see `.nvmrc`; set `CLAUDE` to your `claude`
   binary, or to `node_modules/.bin/claude`). CI runs the same on every pull request.
+- Plugin evals live in `plugins/<plugin>/evals/` and need a logged-in `claude` (CI does not run
+  them). Send results to `.work/`, which the privacy check skips: `claude plugin eval
+  plugins/workflow --tag trigger --ablation none --output-dir .work/evals/trigger`. Run the
+  `hook` tag without `--ablation none`: its no-plugin arm is the control. Skill-firing graders
+  only score with `--ablation none`.
 - Commits and pull request titles follow [Conventional Commits](https://www.conventionalcommits.org):
   `fix` cuts a patch release, `feat` a minor one, `!` or `BREAKING CHANGE:` a major one. Merging
   to `main` is the release: semantic-release appends the notes to `CHANGELOG.md`, tags `v<version>`
