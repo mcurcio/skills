@@ -1,3 +1,9 @@
+## [1.2.2](https://github.com/mcurcio/skills/compare/v1.2.1...v1.2.2) (2026-11-10)
+
+### Bug Fixes
+
+* **workflow:** ask on a missing role; pin through Workflow agent() ([442eee4](https://github.com/mcurcio/skills/commit/442eee402b47f403100c0ac9f3f0dc40c1a5f6c3))
+
 ## [1.2.1](https://github.com/mcurcio/skills/compare/v1.2.0...v1.2.1) (2026-11-06)
 
 ### Bug Fixes
