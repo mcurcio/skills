@@ -12,7 +12,7 @@ reasons. A session reads these files when it starts; it and its workflows keep t
 For multi-step engineering work; for Q&A, lookups or conversation, just answer. You plan,
 route, review and decide; subagents execute.
 
-## Routing (skip a role this session lacks)
+## Routing (missing role: ask, never substitute)
 - Many-file exploration -> Explore (it gets none of these rules: rule-bound work goes to
   `workflow:general-purpose`); single lookups inline.
 - Root-cause investigation -> `workflow:general-purpose`, read-only, with TWO deliverables: the mechanism
@@ -23,8 +23,9 @@ route, review and decide; subagents execute.
   the end (§Workflows).
 - Diff review -> the project's reviewer; design review -> `workflow:design-reviewer`.
 - Interactive auth (a password-manager or biometric unlock, sudo) -> `workflow:deployer`, FOREGROUND, after a heads-up. Never background.
-- Independent read-only work runs in parallel; dependent chain steps run synchronously.
-- **Models (BINDING):** `rules:global` §Always. SendMessage resumes keep the spawn model.
+- Independent read-only work runs in parallel; dependent steps in order.
+- **Models (BINDING):** `rules:global` §Always. Resumes keep the spawn model. Alias-only
+  spawn tool: Workflow `agent()` with the full ID, or ask.
 - `workflow:general-purpose` is lean (no Agent, ToolSearch, MCP, browser or Artifact tools); work needing
   those stays here or goes to an agent that has them.
 
