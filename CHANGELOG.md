@@ -1,3 +1,9 @@
+## [1.4.0](https://github.com/mcurcio/skills/compare/v1.3.0...v1.4.0) (2026-11-11)
+
+### Features
+
+* install beads in cloud environments that use it ([996a305](https://github.com/mcurcio/skills/commit/996a3058d8c0bef0f439a8acc69ec04cdfc72fba))
+
 ## [1.3.0](https://github.com/mcurcio/skills/compare/v1.2.2...v1.3.0) (2026-11-11)
 
 ### Features
