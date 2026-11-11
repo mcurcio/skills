@@ -1,3 +1,9 @@
+## [1.3.0](https://github.com/mcurcio/skills/compare/v1.2.2...v1.3.0) (2026-11-11)
+
+### Features
+
+* install opted-in plugins in cloud environments ([d484e36](https://github.com/mcurcio/skills/commit/d484e363580fb90aae8ceb5c44f63c79757d477b))
+
 ## [1.2.2](https://github.com/mcurcio/skills/compare/v1.2.1...v1.2.2) (2026-11-10)
 
 ### Bug Fixes
