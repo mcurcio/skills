@@ -86,6 +86,8 @@ sh "$HOME/.claude/plugins/marketplaces/mcurcio-skills/scripts/cloud-setup.sh" ||
 project's `.claude/settings.json` turns on, so one environment serves every project that opts in.
 It trusts those projects' settings as the trust dialog would have, so use it only in an
 environment whose repositories you trust.
+If any project has a `.beads/` directory, it also installs the pinned version of the beads issue
+tracker's CLI, `bd`. It installs the tool only and runs no `bd` command in a project.
 
 ### Following releases
 
