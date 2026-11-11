@@ -71,6 +71,22 @@ A marketplace added this way does not update on its own: turn on auto-update for
 in `/plugin` > Marketplaces, or put the `extraKnownMarketplaces` entry above (with `"autoUpdate":
 true`) in your user settings, `~/.claude/settings.json`.
 
+### Cloud sessions
+
+A Claude Code cloud session (claude.ai/code) ignores a project's `.claude/settings.json` plugins,
+because it never shows the trust dialog, and plugins load only if they are installed before Claude
+Code starts. Give the cloud environment this setup script, which runs before Claude Code:
+
+```sh
+claude plugin marketplace add mcurcio/skills || true
+sh "$HOME/.claude/plugins/marketplaces/mcurcio-skills/scripts/cloud-setup.sh" || true
+```
+
+`scripts/cloud-setup.sh` installs every GitHub marketplace and plugin that any checked-out
+project's `.claude/settings.json` turns on, so one environment serves every project that opts in.
+It trusts those projects' settings as the trust dialog would have, so use it only in an
+environment whose repositories you trust.
+
 ### Following releases
 
 Every plugin here follows `main`: no plugin file carries a version, so each merge reaches every
