@@ -12,9 +12,14 @@
 # The first line fetches this repository, and with it this script. The setup script starts in
 # the directory that holds the checkouts; pass another directory as the first argument. Every
 # GitHub marketplace and plugin any repository there turns on is installed at user scope, so a
-# repository's settings are trusted as if its folder had been. No repository file is changed.
+# repository's settings are trusted as if its folder had been. If any repository has a .beads
+# directory, the beads issue tracker's CLI (bd) is installed too: the tool only, so no bd command
+# runs in a repository and no repository file is changed.
 # A failure is printed and skipped: a failing setup script would stop the session starting.
 set -u
+
+# The bd version to install. Pinned; bump it by hand.
+BD_VERSION=1.3.4
 
 for settings in "${1:-.}"/*/.claude/settings.json; do
   [ -f "$settings" ] || continue
@@ -23,5 +28,14 @@ for settings in "${1:-.}"/*/.claude/settings.json; do
     while read -r repo; do claude plugin marketplace add "$repo" || true; done
   jq -r '.enabledPlugins // {} | to_entries[] | select(.value == true) | .key' "$settings" |
     while read -r plugin; do claude plugin install "$plugin" || true; done
+done
+
+for beads in "${1:-.}"/*/.beads; do
+  [ -d "$beads" ] || continue
+  case "$(bd version 2>/dev/null)" in
+    "bd version $BD_VERSION "*) ;;
+    *) npm install -g "@beads/bd@$BD_VERSION" || true ;;
+  esac
+  break
 done
 exit 0
