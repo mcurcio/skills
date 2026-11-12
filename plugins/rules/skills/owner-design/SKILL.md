@@ -1,6 +1,6 @@
 ---
 name: owner-design
-description: Why the owner holds these design rules, and how the owner judges a design. Reasons and worked examples behind the design philosophy in the `rules:global` rules (architecture first, class not instance, DRY and SOLID over YAGNI, pure core, prior art, right-size, one source of truth, no backwards compatibility, the Architects rule), the owner's review lenses, and the review vocabulary (deep modules, deletion test, seams, altitude tree, rule of two). Use when designing a system or module, cutting boundaries, reviewing a design, or deciding whether to extract, share, keep or delete code.
+description: Why the owner holds these design rules, and how the owner judges a design. Reasons and worked examples behind the design philosophy in the `rules:global` rules (architecture first, class not instance, DRY and SOLID over YAGNI, pure core, prior art, right-size, goal-oriented, one source of truth, no backwards compatibility, the Architects rule), the owner's review lenses, and the review vocabulary (deep modules, deletion test, seams, altitude tree, rule of two). Use when designing a system or module, cutting boundaries, reviewing a design, or deciding whether to extract, share, keep or delete code.
 ---
 
 # How the owner judges a design
@@ -62,6 +62,12 @@ the rule wins and the gap is a finding.
   "I don't want good code removed just to save lines in the diff." Cut dead, duplicated or
   reinvented code; keep construction-time guarantees, well-factored modules and tests that catch
   distinct behaviours.
+- **Goal-oriented** (agentfs, 2026-11-12, guidance). agentfs's module cut was designed, reviewed
+  and critiqued step by step, yet no step delivered one of the owner's stated end goals, one
+  engine: the completeness critic had checked the plan only against itself. The owner: "'goal
+  oriented' is a good rubric for any workflow process to consider. And that should be applied
+  to my mcurcio/skills skills". So a planner or critic lists the goals first, then names the
+  step that delivers each: a plan consistent with itself can still miss the point.
 - **No backwards compatibility.** The owner has said it many times. In a private project a fix landed
   behind a config flag that defaulted to the old behaviour, making the fix opt-in; the owner called that
   out as compatibility machinery. When a change breaks callers or tests built on the old
