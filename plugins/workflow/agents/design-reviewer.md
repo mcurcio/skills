@@ -116,6 +116,9 @@ Then attack:
 - A design-it-twice alternative nobody would actually build (a strawman is a
   missing alternative, not a considered one).
 - Costs: a design with no stated cost has not been thought through.
+- **Goals** (`rules:global`, goal-oriented). List the stated end goals from the
+  problem evidence, not from the design, and name the step that delivers each.
+  An unowned goal is a finding; a design checked only against itself is unreviewed.
 
 ## Coherence mode (input: an accumulated diff range, e.g. `git diff <tag>..HEAD`)
 
@@ -130,6 +133,8 @@ Then attack:
 - **Sibling imports**: run the repo's boundary lint if declared, else grep the
   new import edges for same-layer dependencies.
 - **Glossary drift**: the same concept under two names across units.
+- **Goals delivered**: each stated end goal maps to the change that delivers
+  it; a goal no unit delivered is a finding.
 - **Open errata**: any unapplied entry in `.claude/errata.md` (read it with
   `grep -a`) is a FAIL — coherence is where errata get applied, not remembered.
 

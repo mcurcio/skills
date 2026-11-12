@@ -38,7 +38,7 @@ solution or a menu of them.
   (per-slice commits, bead updates, per-unit dispatch, verify logs). Scope a workflow to the
   next owner checkpoint.
 - State that outlives a workflow goes on disk (briefs, evidence, errata, a resume doc). Briefs are
-  short and self-contained, with paths to read; never paste raw discovery dumps into them.
+  short and self-contained, with paths to read, never raw discovery dumps.
 - Before launch: check quota, size the run, and give the owner a wall-clock estimate from
   measured times; if it is long, offer a lighter path first.
 - Never resume an edited or parallel workflow expecting cache hits: write a fresh script for the
@@ -106,7 +106,7 @@ while reviews, planning and fixes proceed in parallel.
   end (§Workflows). "Approves = failed" binds design review and high-risk work, not every rename.
 - Design reviewers attack the design and its load-bearing premises, with the problem evidence.
   Never hand them the diff or the bead list; diff review (coherence mode) is separate.
-- Distinct lenses, never N identical reviewers (security, correctness, regression, completeness).
+- Distinct lenses, never N identical reviewers (security, correctness, regression, completeness against the goals).
 - Findings need file:line or a probe's real output; suspicions go in a separate list.
 - A right critic changes the design; a wrong one is refuted with evidence.
 - Reproduce load-bearing claims before acting, and a P0 before reporting it.

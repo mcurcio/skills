@@ -30,7 +30,7 @@ slice cut, and no preflight that re-runs a baseline a setup step already ran.
 - ONE design document per owner gate, written per the `workflow:design-doc` skill, reviewed
   by the owner on a PR. Merge is acceptance.
 - Adversarial, multi-lens review of the **design** (security, correctness,
-  regression, completeness, plus a domain expert) before any code. Reviewers attack the
+  regression, completeness against the goals, plus a domain expert) before any code. Reviewers attack the
   design's premises with the problem evidence and may read the code to test claims; they are
   not handed the bead list. This is where P0s are cheap.
 - The **tracer bullet** defined in the design: the thinnest end-to-end path through
@@ -331,6 +331,8 @@ land-or-revert are overridden by §4. Its notes, superseded: `reference/archive/
 - [ ] Design doc merged or explicitly accepted; tracer defined; its mutation probes on the
       tracer slice's page. Refactor work: the owner's scope instead (§10).
 - [ ] Slices listed, few and large; the tracer slice is first; each slice's frozen page is in its bead.
+- [ ] Each of the design's stated end goals names the slice that delivers it; an unowned goal
+      goes back to the design (`rules:global`, goal-oriented).
 - [ ] Every bead passes §3.1 green-alone and §3.2 co-change on paper.
 - [ ] No bead spans more than two packages; none is under an hour or over the per-bead ceiling (§5).
 - [ ] Slices with disjoint files (derived outputs counted) marked to run concurrently, each with

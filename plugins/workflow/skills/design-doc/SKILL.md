@@ -259,4 +259,6 @@ publishes it. Publishing, saved answers and the durable PR record: `reference/pu
   costs, where it has options. A conflict with a requirement is a Requirements question.
 - A revision is no longer than the page it replaces.
 - Costs stated, never sold. Placeholder numbers say so.
+- Each stated end goal names the step or layer that delivers it; none is left unowned
+  (`rules:global`, goal-oriented).
 - The owner could steer this layer, and the next phase could start, from this page alone.
