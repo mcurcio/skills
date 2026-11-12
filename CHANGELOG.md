@@ -1,3 +1,9 @@
+## [1.5.0](https://github.com/mcurcio/skills/compare/v1.4.0...v1.5.0) (2026-11-12)
+
+### Features
+
+* check every plan against its stated end goals ([01dfd7f](https://github.com/mcurcio/skills/commit/01dfd7f4536f63374fb0b071dc5b8e3ffaf5ca62))
+
 ## [1.4.0](https://github.com/mcurcio/skills/compare/v1.3.0...v1.4.0) (2026-11-11)
 
 ### Features
