@@ -91,11 +91,16 @@ under the repo's pinned Node (`.nvmrc`). `.releaserc.json`:
 
 - No `v*` tag yet: the first release is `1.0.0`, whatever the history says. semantic-release
   has no 0.x mode; a breaking change on 1.x makes 2.0.0. If the owner wants 0.x, ask, then let
-  the release workflow seed it, never a hand-pushed tag (owner, 2026-11-17, guidance: "I'm not
-  going to do that. Update the workflow to write the tag"): before semantic-release runs, the
-  release job, when no `v*` tag exists, tags the root commit `v0.1.0` and pushes it, accepting
-  an existing `v0.1.0` on that same commit (a concurrent run). The first release is then 0.2.0
-  from a `feat`.
+  the release workflow seed it: the 0.x seed tag is never made by hand (owner, 2026-11-17,
+  guidance: "I'm not going to do that. Update the workflow to write the tag"). Before
+  semantic-release runs, the release job, when no tag matching `tagFormat` is reachable from
+  HEAD, creates `v0.1.0` through the GitHub API with the job's token and mirrors it locally. It
+  tags the root commit; in a repo with merged subtree history (several roots), it tags the last
+  `git subtree add` commit, the one the next bullet's baseline would name. An existing `v0.1.0`
+  (made by hand or by an earlier attempt; the release concurrency group serializes runs) counts
+  as success when it, peeled if annotated, points at that same commit. The first release is then
+  0.2.0 from a `feat`. Reference implementation (single root): the "Seed the 0.x line" step in
+  [tool-approvals' `ci.yml`](https://github.com/mcurcio/tool-approvals/blob/main/.github/workflows/ci.yml).
 - The first release reads the whole history. A `git subtree add` without `--squash` merges the
   upstream project's whole history into the repo, so those commits are ancestors too. Their
   git-style `Revert "..."` messages parse as reverts and land in the notes and, for good, in
