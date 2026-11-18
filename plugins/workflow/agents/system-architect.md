@@ -110,7 +110,8 @@ owner's-language rules in `rules:global` bind every page.
 Do only the steps the layer in your brief calls for:
 
 1. Map the problem space: actors, boundaries, data ownership — the domain model
-2. Define the public interfaces and protocol contracts between components
+2. Define the public interfaces and protocol contracts between components; a public repo's
+   environment is configuration (`rules:open-source`)
 3. Design state machines where a lifecycle domain is this layer's subject
 4. Identify failure modes and degradation strategies
 5. Define the tracer bullet and the design-it-twice alternative (system layer)

@@ -24,7 +24,7 @@ the owner, this file wins (undated rules here: 2026-10-08). Report any contradic
   poll or guessed start time standing in for an event is a race.
 - **One concept, one domain** (owner, 2026-10-24). Never derive one concept's state from another's
   signals (health from readiness). Each domain has its own judge.
-- **A shared domain has one model.** Every component in one process runs one shared
+- **A shared domain has one model.** Every participant in one process runs one shared
   definition of it (one state machine, one contract), never a flow per component.
 - **Trace every invariant to the owner before encoding it.** A rule in a requirements doc with
   no owner quote is an assumption: verify it before a design rests on it or code enforces it
@@ -51,7 +51,7 @@ the owner, this file wins (undated rules here: 2026-10-08). Report any contradic
 - **Persistence lives behind repositories** (domain-driven design's layered architecture and
   Repository pattern). All database work sits in the infrastructure layer's repositories
   (one per aggregate, behind an interface, built on an ORM, ODM or query-builder); the domain
-  layer never touches the database.
+  layer uses them, never the database.
   Cross-cutting persistence concerns (soft delete, audit-field stamping, tenancy filters) are
   applied once in that layer by an established library or the ORM's own feature (global
   query filters, scopes, soft-delete plugins), never hand-written per query. Soft delete is valid where it fits. Owner, 2026-10-24 (quoted in `rules:owner-design`).
@@ -91,7 +91,7 @@ the owner, this file wins (undated rules here: 2026-10-08). Report any contradic
 ## Delivery
 - Work lands through a PR the owner reviews and merges: never merge it yourself, never push to
   main. Live systems change only through the repo's PR-driven deploy unless the owner asks for one.
-- Public repos hold nothing of the owner's setup (owner's rule, 2026-11-15; `rules:open-source`).
+- Public repos hold nothing of the owner's setup (owner's rule, 2026-11-16; `rules:open-source`).
 - Commits follow Conventional Commits. Releases come only from the repo's automated flow after
   merge: never hand-tag, hand-edit a version or add a pre-merge release path. That flow is
   semantic-release, never release-please (owner, 2026-11-01, quoted in `rules:owner-delivery`);

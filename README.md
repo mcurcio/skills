@@ -122,8 +122,8 @@ at the end. Ponytail flags an interface with one implementation as unnecessary, 
 - Name a skill or agent in another plugin by its scoped name (`rules:owner-delivery`), and a
   file in the same plugin by `${CLAUDE_PLUGIN_ROOT}/...`, never by a path on your machine.
 - Nothing private: no local paths, email addresses, host names, secrets or details of private
-  projects. Cite a private project as "a private project". This repo is public, so
-  `rules:open-source` applies to it.
+  projects. Cite a private project as "a private project".
+- This repo is public: `rules:open-source` applies.
 - Run `scripts/check.sh` after `npm ci` (Node 24, see `.nvmrc`; set `CLAUDE` to your `claude`
   binary, or to `node_modules/.bin/claude`). CI runs the same on every pull request.
 - Plugin evals live in `evals/` and need a logged-in `claude` (CI does not run them). Run them
