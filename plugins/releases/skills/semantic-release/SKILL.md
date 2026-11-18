@@ -26,7 +26,8 @@ Precedents: **knobly** (`.github/workflows/ci.yml` job `release`, `.releaserc.js
   "Make sure that releases also append to a CHANGELOG.md in the root"):
   `@semantic-release/changelog` writes it, and `@semantic-release/git` commits only that file
   as `chore(release): <version> [skip ci]` and pushes it to the default branch. The tag is put
-  on that commit. The notes also go on the GitHub Release.
+  on that commit. The notes also go on the GitHub Release. On a public repo,
+  release notes are public (`rules:open-source`).
 - The version lives in the git tag `v<version>`, the GitHub Release and CHANGELOG.md, never in
   a source or manifest file. A build that needs it is handed it (an argument, a build arg) and
   stamps it for that build only (knobly's `release-build.sh` restores the files on exit).

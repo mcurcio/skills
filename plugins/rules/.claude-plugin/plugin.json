@@ -1,6 +1,6 @@
 {
   "name": "rules",
-  "description": "The global engineering rules, injected into every session, the owner-* skills that give their reasons, and how pages for the owner are presented.",
+  "description": "The global engineering rules, injected into every session, the owner-* skills that give their reasons, how pages for the owner are presented, and how a public repo is built.",
   "author": {
     "name": "Matt Curcio",
     "url": "https://github.com/mcurcio"

@@ -89,7 +89,8 @@ observable behaviour (a route that answers end to end, the tracer, a UI surface)
    criteria and mutation probe. An implementer reads the bead and the design's
    relevant section, never the whole feature's documents.
 6. **Docs are their own beads.** Spec rows, README, CLAUDE.md and deployment notes
-   are cut as a docs bead per milestone. A code bead is never failed, and never
+   are cut as a docs bead per milestone; a public repo's README follows
+   `rules:open-source`. A code bead is never failed, and never
    reverted, on a documentation finding.
 7. **No coherence bead per layer.** One coherence review, in the end review (§4), never per
    package layer or milestone. A milestone is not closed, and its PR is not merged, until its docs

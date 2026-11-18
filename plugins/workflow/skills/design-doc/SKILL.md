@@ -23,7 +23,7 @@ reviewer's brief, and show it on the briefing's header. A small project may skip
 | Layer | When | What the owner weighs in on | The page leads with |
 |---|---|---|---|
 | **Domain** | New project, new subsystem, or a change to what the system is about | Bounded contexts, the concepts each owns, their states and invariants, the language, what is NOT each context's job | Context map and domain model, new-terms table |
-| **System** | Once the domain is agreed | The system's parts and their public interfaces (API contracts); for a new project, technology choices and deployment topology | Component picture, interface sketches in TypeScript |
+| **System** | Once the domain is agreed | The system's parts and their public interfaces (API contracts); for a new project, technology choices and deployment topology; for a public repo, its options and extension points (`rules:open-source` §2) | Component picture, interface sketches in TypeScript |
 | **Service** | A system with more than one running service | Which services exist, what crosses between them (events, calls), who calls whom, who owns which data | Service map, sequence diagrams of the key flows |
 | **Module** | Designing a specific module or cross-module change | Module boundaries, contracts (what each takes, gives, never does), data flow, who owns which state | Module map, contract table, data-flow table |
 | **Interfaces** | A module's public surface | Signatures, error unions, what each caller is injected with, invariants as doc comments | The signatures, each linked to the code it changes |
