@@ -90,8 +90,12 @@ under the repo's pinned Node (`.nvmrc`). `.releaserc.json`:
 ## 3. First release and 0.x
 
 - No `v*` tag yet: the first release is `1.0.0`, whatever the history says. semantic-release
-  has no 0.x mode; a breaking change on 1.x makes 2.0.0. If the owner wants 0.x, ask, then seed
-  a tag (`v0.1.0` on an old commit) by the owner's hand or a one-off run the owner approves.
+  has no 0.x mode; a breaking change on 1.x makes 2.0.0. If the owner wants 0.x, ask, then let
+  the release workflow seed it, never a hand-pushed tag (owner, 2026-11-17, guidance: "I'm not
+  going to do that. Update the workflow to write the tag"): before semantic-release runs, the
+  release job, when no `v*` tag exists, tags the root commit `v0.1.0` and pushes it, accepting
+  an existing `v0.1.0` on that same commit (a concurrent run). The first release is then 0.2.0
+  from a `feat`.
 - The first release reads the whole history. A `git subtree add` without `--squash` merges the
   upstream project's whole history into the repo, so those commits are ancestors too. Their
   git-style `Revert "..."` messages parse as reverts and land in the notes and, for good, in
