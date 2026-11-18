@@ -34,6 +34,10 @@ never imports, names or assumes the installation.
 Author identity is not setup: the owner's public name, GitHub handle and public email stay in
 the LICENSE, the package metadata and the repo's URLs.
 
+A repo that publishes the owner's own rules or profile (such as this rule set) is the owner's
+published profile, not a product (owner's guidance, 2026-11-17): it may name and quote the owner
+throughout and need not be generic, but it still holds no setup details.
+
 ## 2. Build for many users and topologies
 
 - **Every environment value is configuration.** No absolute path, hostname, domain, repo name,
