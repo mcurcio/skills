@@ -11,7 +11,7 @@ every other agent or person who reads the files, works to the same rules, kept i
 
 | Plugin | What it holds | Who enables it |
 |---|---|---|
-| `rules` | `global`: the engineering rules (design philosophy, the owner's language, delivery, always-on habits), injected into every session by a SessionStart hook. `owner-design`, `owner-delivery`, `owner-conversation`: the reasons and worked examples behind them. `pages`: how every page or report for the owner is presented. Requires `impeccable` | every project that opts in |
+| `rules` | `global`: the engineering rules (design philosophy, the owner's language, delivery, always-on habits), injected into every session by a SessionStart hook. `owner-design`, `owner-delivery`, `owner-conversation`: the reasons and worked examples behind them. `pages`: how every page or report for the owner is presented. `open-source`: how a public repo is built as a standalone, reusable project. Requires `impeccable` | every project that opts in |
 | `workflow` | `orchestrator`: the main session's policy (routing, workflows, owner gates, review), injected by a SessionStart hook. The agents `code-architect`, `system-architect`, `requirements`, `design-reviewer`, `implementer`, `verifier`, `deployer`, `general-purpose`. The skills `design-doc`, `implementation-workflow`, `antipattern-review`. Needs `rules` | every project, with `rules` |
 | `releases` | `semantic-release`: releases cut automatically on merge, notes in `CHANGELOG.md`, the version in the git tag only | projects that release |
 | `toolkit` | `grammar-soundness` (proving a grammar unambiguous, checking parsers against it) and `chrome-ui-testing` (test-driving a web UI in Chrome) | anyone who wants them |
@@ -122,7 +122,8 @@ at the end. Ponytail flags an interface with one implementation as unnecessary, 
 - Name a skill or agent in another plugin by its scoped name (`rules:owner-delivery`), and a
   file in the same plugin by `${CLAUDE_PLUGIN_ROOT}/...`, never by a path on your machine.
 - Nothing private: no local paths, email addresses, host names, secrets or details of private
-  projects. Cite a private project as "a private project".
+  projects. Cite a private project as "a private project". This repo is public, so
+  `rules:open-source` applies to it.
 - Run `scripts/check.sh` after `npm ci` (Node 24, see `.nvmrc`; set `CLAUDE` to your `claude`
   binary, or to `node_modules/.bin/claude`). CI runs the same on every pull request.
 - Plugin evals live in `evals/` and need a logged-in `claude` (CI does not run them). Run them
