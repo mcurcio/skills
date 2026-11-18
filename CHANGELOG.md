@@ -1,3 +1,13 @@
+## [1.6.0](https://github.com/mcurcio/skills/compare/v1.5.0...v1.6.0) (2026-11-18)
+
+### Features
+
+* **rules:** add the open-source skill for public repos ([03e3eb8](https://github.com/mcurcio/skills/commit/03e3eb86e36e522e3d5ebec1232da2dbb7c66440))
+
+### Bug Fixes
+
+* **rules:** right-size the open-source skill and cover going public ([3601b9b](https://github.com/mcurcio/skills/commit/3601b9bae8b579a8b8527d6a5e12f713a802af52))
+
 ## [1.5.0](https://github.com/mcurcio/skills/compare/v1.4.0...v1.5.0) (2026-11-12)
 
 ### Features
